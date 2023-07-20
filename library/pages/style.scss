@@ -29,9 +29,27 @@
 }
 
 .library {
-    background: url(../assets/images/library_background.png) no-repeat;;
+    background: url(../assets/images/library_background.png), lightgray 50%/ cover no-repeat;
     background-size: cover;
     height: 600px;
     background-position: center;
+    position: relative;
+
+    // &::before{
+    //     content: "";
+    //     position: absolute;
+    //     display: block;
+    //     height: 50%;
+    //     width: 100%;
+    //     top: 0;
+    //     background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%,);
+    // }
+
+    &-section {
+        &-text {
+            color: white;
+            background-color: black;
+        }
+    }
 }
 

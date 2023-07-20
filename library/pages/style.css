@@ -21,8 +21,13 @@
 }
 
 .library {
-  background: url(../assets/images/library_background.png) no-repeat;
+  background: url(../assets/images/library_background.png), lightgray 50%/cover no-repeat;
   background-size: cover;
   height: 600px;
   background-position: center;
+  position: relative;
+}
+.library-section-text {
+  color: white;
+  background-color: black;
 }/*# sourceMappingURL=style.css.map */
