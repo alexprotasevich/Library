@@ -1,1 +1,6 @@
-/*# sourceMappingURL=style.css.map */
+.fix-size {
+  max-width: 1440px;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  border: 1px solid red;
+}/*# sourceMappingURL=style.css.map */
