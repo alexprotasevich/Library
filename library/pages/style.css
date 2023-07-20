@@ -3,4 +3,19 @@
   margin: 0 auto;
   scroll-behavior: smooth;
   border: 1px solid red;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-navigation-nav-list {
+  list-style-type: none;
+}
+.header-navigation-nav-list-item {
+  display: inline;
+}
+.header-navigation-nav-list-item-link {
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
