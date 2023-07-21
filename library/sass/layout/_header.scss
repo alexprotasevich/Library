@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-navigation {
+        &-nav {
+            &-list {
+                list-style-type: none;
+
+                &-item {
+                    display: inline;
+
+                    &-link {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
