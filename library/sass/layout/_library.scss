@@ -5,20 +5,31 @@
     background-position: center;
     position: relative;
 
-    // &::before{
-    //     content: "";
-    //     position: absolute;
-    //     display: block;
-    //     height: 50%;
-    //     width: 100%;
-    //     top: 0;
-    //     background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%,);
-    // }
+    &::before{
+        content: "";
+        position: absolute;
+        display: block;
+        height: 50%;
+        width: 100%;
+        top: 0;
+        background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%,);
+    }
 
     &-section {
         &-text {
-            color: white;
-            background-color: black;
+            @extend .font-forum;
+            color: $color-white;
+            background-color: $color-dark;
+            font-size: 40px;
+            line-height: 50px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            width: 600px;
+            height: 220px;
+            text-align: center;
+            position: absolute;
+            padding: 35px 40px;
+            margin-top: 220px;
         }
     }
 }

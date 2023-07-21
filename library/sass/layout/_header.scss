@@ -1,9 +1,10 @@
 .header {
     display: flex;
     justify-content: space-between;
-    background: $color-gold;
+    background: $color-dark;
 
     &-navigation {
+        display: flex;
         gap: 40px;
 
         &-nav {
