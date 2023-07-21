@@ -1,7 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
 .fix-size {
     max-width: 1440px;
     margin: 0 auto;
     scroll-behavior: smooth;
-    border: 1px solid red;
+    // border: 1px solid red;
     ;
+}
+
+h1 {
+    color: $color-white;
+    @extend .font-forum;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
 }

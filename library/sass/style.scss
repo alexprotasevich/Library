@@ -1,12 +1,10 @@
-@import "base/base";
-@import "base/normalize";
 
 @import "abstracts/colors";
 @import "abstracts/fonts";
+@import "base/base";
+@import "components/buttons";
 
 @import "layout/header";
 @import "layout/library";
 @import "layout/main";
 @import "layout/footer";
-
-@import "components/bottons";

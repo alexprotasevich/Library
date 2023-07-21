@@ -1,21 +1,45 @@
 .header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    background: $color-gold;
 
     &-navigation {
+        gap: 40px;
+
         &-nav {
+            display: flex;
+            align-items: center;
+
             &-list {
                 list-style-type: none;
+                padding-left: 0;
+                display: flex;
+                gap: 30px;
 
                 &-item {
                     display: inline;
 
                     &-link {
-                        text-decoration: none;
+                        @extend .font-inter-regular;
+                        color: $color-white;
+                        font-size: 20px;
+                        line-height: 50px;
                     }
                 }
             }
+
+        }
+
+        &-icon {
+            display: flex;
+            padding-right: 20px;
+        }
+    }
+
+    &-logo {
+        &-text {
+            padding: 20px;
+
         }
     }
 }
