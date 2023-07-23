@@ -4,6 +4,9 @@
     padding: 0;
 }
 
+.wrapper {
+    background-color: $color-dark;
+}
 
 .fix-size {
     max-width: 1440px;
@@ -24,4 +27,8 @@ h1 {
 
 a {
     text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }

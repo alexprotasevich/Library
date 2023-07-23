@@ -25,15 +25,27 @@
                         color: $color-white;
                         font-size: 20px;
                         line-height: 50px;
+
+                        &:hover {
+                            color: $color-gold;
+                            cursor: pointer;
+                            transition: 1s;
+                        }
                     }
                 }
             }
-
         }
 
         &-icon {
             display: flex;
             padding-right: 20px;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-gold;
+                cursor: pointer;
+                transition: 1s;
+            }
         }
     }
 
