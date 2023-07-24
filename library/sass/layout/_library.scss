@@ -25,8 +25,8 @@
             line-height: 50px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            width: 600px;
-            height: 220px;
+            max-width: 600px;
+            min-height: 220px;
             text-align: center;
             padding: 35px 40px;
         }

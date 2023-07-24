@@ -10,19 +10,19 @@
   font-family: "Forum";
   src: url("../assets/fonts/Forum-Regular.ttf");
 }
-.font-inter-bold {
+.font-inter-bold, .main-favorites-wrapper-pick-author, .main-favorites-wrapper-pick-name, .main-favorites-paragraph, .button-active:disabled, .button-active {
   font-family: "Inter-Bold";
   font-style: normal;
   font-weight: 700;
 }
 
-.font-inter-regular, .main-about-paragraph, .header-navigation-nav-list-item-link {
+.font-inter-regular, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
   font-family: "Inter-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.font-forum, .main-about-text, .library-section-text, h1 {
+.font-forum, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .library-section-text, h1 {
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
@@ -56,8 +56,8 @@ a {
   text-decoration: none;
 }
 
-html {
-  scroll-behavior: smooth;
+.hidden {
+  display: none;
 }
 
 .main-about-buttons-container {
@@ -96,14 +96,51 @@ html {
   transition: background-color 0.6s ease;
 }
 
+.button-active {
+  width: 75px;
+  height: 30px;
+  flex-shrink: 0;
+  color: #0C0C0E;
+  text-align: center;
+  font-size: 10px;
+  line-height: normal;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.button-active:hover:not(:disabled) {
+  cursor: pointer;
+  transition: 1s;
+  border-radius: 2px;
+  border: 1px solid #BB945F;
+  background: #BB945F;
+}
+.button-active:disabled {
+  width: 75px;
+  height: 30px;
+  flex-shrink: 0;
+  color: #BB945F;
+  text-align: center;
+  font-size: 10px;
+  line-height: normal;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: 1px solid #BB945F;
+  cursor: default;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   background: #0C0C0E;
+  flex-wrap: wrap;
 }
 .header-navigation {
   display: flex;
   gap: 40px;
+  flex-wrap: wrap;
 }
 .header-navigation-nav {
   display: flex;
@@ -114,6 +151,7 @@ html {
   padding-left: 0;
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 .header-navigation-nav-list-item {
   display: inline;
@@ -168,10 +206,14 @@ html {
   line-height: 50px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  width: 600px;
-  height: 220px;
+  max-width: 600px;
+  min-height: 220px;
   text-align: center;
   padding: 35px 40px;
+}
+
+.main {
+  background-color: #FFFFFF;
 }
 
 .main {
@@ -186,7 +228,7 @@ html {
   text-align: center;
   padding-top: 20px;
 }
-.main-about-text:after {
+.main-about-text::after {
   content: "";
   background-color: #0C0C0E;
   height: 1px;
@@ -207,6 +249,10 @@ html {
   display: flex;
   gap: 25px;
   justify-content: center;
+  flex-wrap: wrap;
+}
+.main-about-gallery-img-width {
+  width: 100%;
 }
 .main-about-buttons {
   display: flex;
@@ -217,4 +263,157 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main-favorites-text {
+  color: #0C0C0E;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: center;
+  padding-top: 20px;
+}
+.main-favorites-text::after {
+  content: "";
+  background-color: #0C0C0E;
+  height: 1px;
+  width: 50px;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20px);
+}
+.main-favorites-paragraph {
+  color: #000000;
+  font-size: 20px;
+  line-height: normal;
+  padding: 61px 0 40px 20px;
+}
+.main-favorites-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px;
+  padding: 0 0 0 15px;
+}
+.main-favorites-input-label {
+  font-size: 20px;
+  line-height: normal;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.main-favorites-input-label:has(.main-favorites-input-label-radio:checked) {
+  font-weight: 700;
+}
+.main-favorites-input-label-radio {
+  accent-color: #000000;
+  position: relative;
+  height: 17px;
+  width: 17px;
+  padding: 5px;
+  cursor: pointer;
+}
+.main-favorites-input-label-radio::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+}
+.main-favorites-input-label-radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000000;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+.main-favorites-wrapper {
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main-favorites-wrapper-pick {
+  width: 590px;
+  position: relative;
+  margin-top: 40px;
+  min-height: 555px;
+}
+.main-favorites-wrapper-pick-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-favorites-wrapper-pick-content {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  width: 550px;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-favorites-wrapper-pick-staff {
+  color: #000000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  padding: 14px 0 0 0;
+}
+.main-favorites-wrapper-pick-staff::after {
+  content: "";
+  background-color: #BB945F;
+  height: 1px;
+  width: 60px;
+  display: block;
+  position: relative;
+}
+.main-favorites-wrapper-pick-name {
+  color: #000000;
+  font-size: 15px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 19px 0 0 0;
+}
+.main-favorites-wrapper-pick-author {
+  color: #000000;
+  font-size: 15px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  padding: 0 0 0 0;
+}
+.main-favorites-wrapper-pick-text {
+  position: relative;
+  color: #000000;
+  font-size: 15px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  padding-top: 20px;
+  padding-right: 150px;
+}
+.main-favorites-wrapper-pick-button {
+  padding: 15px 0 15px 0;
+}
+.main-favorites-wrapper-pick-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }/*# sourceMappingURL=style.css.map */

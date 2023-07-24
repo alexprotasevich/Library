@@ -1,0 +1,60 @@
+.main {
+    background-color: $color-white;
+
+    &-about {
+        &-text {
+            @extend .font-forum;
+            color: $color-dark;
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            text-align: center;
+            padding-top: 20px;
+
+            &::after {
+                content: "";
+                background-color: $color-dark;
+                height: 1px;
+                width: 50px;
+                display: block;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 20px);
+            }
+        }
+
+        &-paragraph {
+            @extend .font-inter-regular;
+            color: $color-black;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        &-gallery {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            &-img {
+                &-width {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-buttons {
+            display: flex;
+            justify-content: center;
+            padding: 35px 0 35px;
+
+            &-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

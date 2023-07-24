@@ -42,3 +42,42 @@
         }
     }
 }
+
+.button-active {
+    @extend .font-inter-bold;
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    color: $color-dark;
+    text-align: center;
+    font-size: 10px;
+    line-height: normal;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: 1px solid $color-dark;
+    background-color: $color-white;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+        cursor: pointer;
+        transition: 1s;
+        border-radius: 2px;
+        border: 1px solid $color-gold;
+        background: $color-gold;
+    }
+
+    &:disabled {
+        @extend .font-inter-bold;
+        width: 75px;
+        height: 30px;
+        flex-shrink: 0;
+        color: $color-gold;
+        text-align: center;
+        font-size: 10px;
+        line-height: normal;
+        letter-spacing: 1px;
+        border-radius: 2px;
+        border: 1px solid $color-gold;
+        cursor: default;
+    }
+}

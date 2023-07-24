@@ -18,7 +18,7 @@
                 <nav class="header-navigation-nav">
                     <ul class="header-navigation-nav-list">
                         <li class="header-navigation-nav-list-item"><a href="#about" class="header-navigation-nav-list-item-link">About</a></li>
-                        <li class="header-navigation-nav-list-item"><a href="#" class="header-navigation-nav-list-item-link">Favorites</a></li>
+                        <li class="header-navigation-nav-list-item"><a href="#favorites" class="header-navigation-nav-list-item-link">Favorites</a></li>
                         <li class="header-navigation-nav-list-item"><a href="#" class="header-navigation-nav-list-item-link">Coffee shop</a></li>
                         <li class="header-navigation-nav-list-item"><a href="#" class="header-navigation-nav-list-item-link">Contacts</a></li>
                         <li class="header-navigation-nav-list-item"><a href="#" class="header-navigation-nav-list-item-link">Library Card</a></li>
@@ -37,16 +37,17 @@
         <main class="main fix-size">
             <section class="main-about" id="about">
                 <h2 class="main-about-text">About</h2>
-                <p class="main-about-paragraph">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
+                <p class="main-about-paragraph">The Brooklyn Library is a free workspace, a large number of books and a cozy
+                     coffee shop inside</p>
                 <div class="main-about-gallery">
                     <div class="main-about-gallery-img">
-                        <img src="../assets/images/library_1.png" alt="library_1">
+                        <img class="main-about-gallery-img-width" src="../assets/images/library_1.png" alt="library_1">
                     </div>
                     <div class="main-about-gallery-img">
-                        <img src="../assets/images/library_2.png" alt="library_2">
+                        <img class="main-about-gallery-img-width" src="../assets/images/library_2.png" alt="library_2">
                     </div>
                     <div class="main-about-gallery-img">
-                        <img src="../assets/images/library_3.png" alt="library_3">
+                        <img class="main-about-gallery-img-width" src="../assets/images/library_3.png" alt="library_3">
                     </div>
                 </div>
                 <div class="main-about-buttons">
@@ -60,6 +61,284 @@
                         <span class="main-about-buttons-container-right"></span>
                     </div>
                 </div>
+            </section>
+            <section class="main-favorites" id="favorites">
+                <h2 class="main-favorites-text">Favorites</h2>
+                <p class="main-favorites-paragraph">Pick favorites of season</p>
+                <div class="main-favorites-input">
+                    <label for="check1" class="main-favorites-input-label">
+                        <input name="season" type="radio" checked value="winter" id="check1" class="main-favorites-input-label-radio">Winter
+                    </label>
+                    <label for="check2" class="main-favorites-input-label">
+                        <input name="season" type="radio" value="spring" id="check2" class="main-favorites-input-label-radio">Spring
+                    </label>
+                    <label for="check3" class="main-favorites-input-label">
+                        <input name="season" type="radio" value="summer" id="check3" class="main-favorites-input-label-radio">Summer
+                    </label>
+                    <label for="check4" class="main-favorites-input-label">
+                        <input name="season" type="radio" value="autumn" id="check4" class="main-favorites-input-label-radio">Autumn
+                    </label>
+                </div>
+                <div class="main-favorites-wrapper">
+                    <div class="main-favorites-wrapper-pick">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">The Book Eaters</p>
+                                <p class="main-favorites-wrapper-pick-author">By Sunyi Dean</p>
+                                <p class="main-favorites-wrapper-pick-text">An unusual sci-fi story about a book eater woman who
+                                     tries desperately to save her dangerous mind-eater son from tradition and certain death.
+                                      Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist.
+                                       Not for the faint of heart.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_1.png" alt="The Book Eaters">
+                    </div>
+                    <div class="main-favorites-wrapper-pick">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Cackle</p>
+                                <p class="main-favorites-wrapper-pick-author">By Rachel Harrison</p>
+                                <p class="main-favorites-wrapper-pick-text">Are your Halloween movies of choice The Witches of Eastwick
+                                     and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a
+                                      quaint town in upstate New York and befriends a beautiful witch.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_2.png" alt="Cackle">
+                    </div>
+                    <div class="main-favorites-wrapper-pick">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Dante: Poet of the Secular World</p>
+                                <p class="main-favorites-wrapper-pick-author">By Erich Auerbach</p>
+                                <p class="main-favorites-wrapper-pick-text">Auerbach's engaging book places the 'Comedy' within the
+                                     tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who
+                                      raised the individual and his drama of soul into something of divine significance—an inspired
+                                       introduction to Dante's main themes.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_3.png" alt="Dante: Poet of the Secular World">
+                    </div>
+                    <div class="main-favorites-wrapper-pick">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">The Last Queen</p>
+                                <p class="main-favorites-wrapper-pick-author">By Clive Irving</p>
+                                <p class="main-favorites-wrapper-pick-text">A timely and revelatory new biography of Queen Elizabeth
+                                     (and her family) exploring how the Windsors have evolved and thrived as the modern world has
+                                      changed around them.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active" disabled>Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_4.png" alt="The Last Queen">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">The Body</p>
+                                <p class="main-favorites-wrapper-pick-author">By Stephen King</p>
+                                <p class="main-favorites-wrapper-pick-text">Powerful novel that takes you back to a nostalgic time,
+                                     exploring both the beauty and danger and loss of innocence that is youth.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_5.png" alt="The Body">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Carry: A Memoir of Survival on Stolen Landn</p>
+                                <p class="main-favorites-wrapper-pick-author">By Toni Jenso</p>
+                                <p class="main-favorites-wrapper-pick-text">This memoir about the author's relationship with gun
+                                     violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_6.png" alt="Carry: A Memoir of Survival on Stolen Landn">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Days of Distraction</p>
+                                <p class="main-favorites-wrapper-pick-author">By Alexandra Chang</p>
+                                <p class="main-favorites-wrapper-pick-text">A sardonic view of Silicon Valley culture, a meditation
+                                     on race, and a journal of displacement and belonging,
+                                      all in one form-defying package of spare prose.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_7.png" alt="Days of Distraction">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Dominicana</p>
+                                <p class="main-favorites-wrapper-pick-author">By Angie Cruz</p>
+                                <p class="main-favorites-wrapper-pick-text">A fascinating story of a teenage girl who marries a man
+                                     twice her age with the promise to bring her to America. Her marriage is an opportunity
+                                      for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active" disabled>Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_8.png" alt="Dominicana">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Crude: A Memoir</p>
+                                <p class="main-favorites-wrapper-pick-author">By Pablo Fajardo &AMP; Sophie Tardy-Joubert</p>
+                                <p class="main-favorites-wrapper-pick-text">Drawing and color by Damien Roudeau | This book
+                                     illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the
+                                      ChevronTexaco company for damage their oil fields did to the Amazon and her people</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_9.png" alt="Crude: A Memoir">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Let My People Go Surfing</p>
+                                <p class="main-favorites-wrapper-pick-author">By Yvon Chouinard</p>
+                                <p class="main-favorites-wrapper-pick-text">Chouinard—climber, businessman, environmentalist—shares
+                                     tales of courage and persistence from his experience of founding and leading Patagonia,
+                                      Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman,
+                                       Including 10 More Years of Business Unusual.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_10.png" alt="Let My People Go Surfing">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">The Octopus Museum: Poems</p>
+                                <p class="main-favorites-wrapper-pick-author">By Brenda Shaughnessy</p>
+                                <p class="main-favorites-wrapper-pick-text">This collection of bold and scathingly beautiful
+                                     feminist poems imagines what comes after our current age of environmental destruction,
+                                      racism, sexism, and divisive politics.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_11.png" alt="The Octopus Museum: Poems">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Shark Dialogues: A Novel</p>
+                                <p class="main-favorites-wrapper-pick-author">By Kiana Davenport</p>
+                                <p class="main-favorites-wrapper-pick-text">An epic saga of seven generations of one family
+                                     encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four
+                                      granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries,
+                                       lepers and healers.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_12.png" alt="Shark Dialogues: A Novel">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Casual Conversation</p>
+                                <p class="main-favorites-wrapper-pick-author">By Renia White</p>
+                                <p class="main-favorites-wrapper-pick-text">White's impressive debut collection takes readers
+                                     through and beyond the concepts of conversation and the casual - both what we say to each
+                                      other and what we don't, examining the possibilities around how we construct and communicate
+                                       identity.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_13.png" alt="Casual Conversation">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">The Great Fire</p>
+                                <p class="main-favorites-wrapper-pick-author">By Lou Ureneck</p>
+                                <p class="main-favorites-wrapper-pick-text">The harrowing story of an ordinary American and a
+                                     principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary
+                                      rescue effort that saved a quarter of a million refugees from the Armenian Genocide</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_14.png" alt="The Great Fire">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Rickey: The Life and Legend</p>
+                                <p class="main-favorites-wrapper-pick-author">By Howard Bryant</p>
+                                <p class="main-favorites-wrapper-pick-text">With the fall rolling around, one can't help but think
+                                     of baseball's postseason coming up! And what better way to prepare for it than reading the
+                                      biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_15.png" alt="Rickey: The Life and Legend">
+                    </div>
+                    <div class="main-favorites-wrapper-pick hidden">
+                        <div class="main-favorites-wrapper-pick-content">
+                            <div class="main-favorites-wrapper-pick-wrapper">
+                                <p class="main-favorites-wrapper-pick-staff">Staff Picks</p>
+                                <p class="main-favorites-wrapper-pick-name">Slug: And Other Stories</p>
+                                <p class="main-favorites-wrapper-pick-author">By Megan Milks</p>
+                                <p class="main-favorites-wrapper-pick-text">Exes Tegan and Sara find themselves chained together
+                                     by hairballs of codependency. A father and child experience the shared trauma of giving
+                                      birth to gods from their wounds.</p>
+                            </div>
+                            <div class="main-favorites-wrapper-pick-button">
+                                <button class="button-active">Buy</button>
+                            </div>
+                        </div>
+                        <img class="main-favorites-wrapper-pick-img" src="../assets/images/book_16.png" alt="Slug: And Other Stories">
+                    </div>
             </section>
         </main>
     </div>
