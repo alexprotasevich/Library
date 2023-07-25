@@ -16,13 +16,13 @@
   font-weight: 700;
 }
 
-.font-inter-regular, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
+.font-inter-regular, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
   font-family: "Inter-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.font-forum, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .library-section-text, h1 {
+.font-forum, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .library-section-text, h1 {
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
@@ -416,4 +416,96 @@ a {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+.main-coffeeshop {
+  padding: 50px 20px 40px 20px;
+}
+.main-coffeeshop-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.main-coffeeshop-text {
+  color: #0C0C0E;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: center;
+  padding-top: 20px;
+}
+.main-coffeeshop-text::after {
+  content: "";
+  background-color: #0C0C0E;
+  height: 1px;
+  width: 50px;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20px);
+}
+.main-coffeeshop-paragraph {
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding-top: 40px;
+}
+.main-coffeeshop-container {
+  width: 438px;
+}
+.main-coffeeshop-container-paragraph {
+  color: #BB945F;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.main-coffeeshop-container-ul {
+  list-style-type: none;
+  padding-top: 39px;
+}
+.main-coffeeshop-container-ul-li {
+  display: grid;
+  grid-template-columns: 1fr 178px 38px;
+}
+.main-coffeeshop-container-text {
+  color: #000000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.main-coffeeshop-container-text::after {
+  content: "";
+  background-color: #BB945F;
+  height: 1px;
+  width: 100px;
+  display: block;
+  position: relative;
+  left: 259px;
+  transform: translate(0%, -20px);
+}
+.main-coffeeshop-container-price {
+  color: #000000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  grid-column: 3;
+  text-align: right;
+}
+
+.right-align {
+  text-align: right;
+}
+.right-align::after {
+  left: 292px;
+}
+
+.width-right {
+  width: 480px;
+}
+
+.li-right {
+  grid-template-columns: 1fr 211px 38px;
 }/*# sourceMappingURL=style.css.map */
