@@ -10,19 +10,19 @@
   font-family: "Forum";
   src: url("../assets/fonts/Forum-Regular.ttf");
 }
-.font-inter-bold, .main-favorites-wrapper-pick-author, .main-favorites-wrapper-pick-name, .main-favorites-paragraph, .button-active:disabled, .button-active {
+.font-inter-bold, .main-contacts-info-wrapper-mail, .main-contacts-info-text, .main-favorites-wrapper-pick-author, .main-favorites-wrapper-pick-name, .main-favorites-paragraph, .button-active:disabled, .button-active {
   font-family: "Inter-Bold";
   font-style: normal;
   font-weight: 700;
 }
 
-.font-inter-regular, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
+.font-inter-regular, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
   font-family: "Inter-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.font-forum, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .library-section-text, h1 {
+.font-forum, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .library-section-text, h1 {
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
@@ -508,4 +508,79 @@ a {
 
 .li-right {
   grid-template-columns: 1fr 211px 38px;
+}
+
+.main-contacts-text {
+  color: #0C0C0E;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: center;
+  padding-top: 20px;
+}
+.main-contacts-text::after {
+  content: "";
+  background-color: #0C0C0E;
+  height: 1px;
+  width: 50px;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20px);
+}
+.main-contacts-info-text {
+  color: #000000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.main-contacts-info-container {
+  padding: 30px 0;
+}
+.main-contacts-info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 20px 0 20px 0;
+}
+.main-contacts-info-wrapper-text {
+  color: #000000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.main-contacts-info-wrapper-tel {
+  color: #000000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  padding-left: 5px;
+}
+.main-contacts-info-wrapper-tel:hover {
+  color: #BB945F;
+  cursor: pointer;
+  transition: 1s;
+}
+.main-contacts-info-wrapper-mail {
+  color: #000000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  padding-left: 5px;
+}
+.main-contacts-info-wrapper-mail:hover {
+  color: #BB945F;
+  cursor: pointer;
+  transition: 1s;
+}
+.main-contacts-wrapper {
+  padding: 40px 20px 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.css.map */
