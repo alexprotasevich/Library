@@ -5,6 +5,7 @@
         &-wrapper {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         &-text {
@@ -53,9 +54,9 @@
 
             &-ul {
                 list-style-type: none;
-                padding-top: 39px;
 
                 &-li {
+                    padding-top: 39px;
                     display: grid;
                     grid-template-columns: 1fr 178px 38px;
                 }

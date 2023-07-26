@@ -16,13 +16,13 @@
   font-weight: 700;
 }
 
-.font-inter-regular, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
+.font-inter-regular, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
   font-family: "Inter-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.font-forum, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .library-section-text, h1 {
+.font-forum, .main-library-reader-text, .main-library-card-form-text, .main-library-text, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .library-section-text, .input, h1 {
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
@@ -131,6 +131,25 @@ a {
   cursor: default;
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input {
+  width: 100%;
+  color: #8E8E8E;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  outline: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  background: #FFFFFF;
+  text-indent: 20px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -141,6 +160,7 @@ a {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  align-items: center;
 }
 .header-navigation-nav {
   display: flex;
@@ -166,13 +186,12 @@ a {
   cursor: pointer;
   transition: 1s;
 }
-.header-navigation-icon {
-  display: flex;
-  padding-right: 20px;
+.header-navigation-icon-svg {
   cursor: pointer;
+  fill: #FFFFFF;
 }
-.header-navigation-icon:hover {
-  color: #BB945F;
+.header-navigation-icon-svg:hover {
+  fill: #BB945F;
   cursor: pointer;
   transition: 1s;
 }
@@ -424,6 +443,7 @@ a {
 .main-coffeeshop-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .main-coffeeshop-text {
   color: #0C0C0E;
@@ -463,9 +483,9 @@ a {
 }
 .main-coffeeshop-container-ul {
   list-style-type: none;
-  padding-top: 39px;
 }
 .main-coffeeshop-container-ul-li {
+  padding-top: 39px;
   display: grid;
   grid-template-columns: 1fr 178px 38px;
 }
@@ -583,4 +603,100 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.main-contacts-map {
+  display: flex;
+  width: 100%;
+}
+
+.main-library-text {
+  color: #0C0C0E;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: center;
+  padding-top: 20px;
+}
+.main-library-text::after {
+  content: "";
+  background-color: #0C0C0E;
+  height: 1px;
+  width: 50px;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20px);
+}
+.main-library-wrapper {
+  padding: 40px 20px 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main-library-card {
+  width: 600px;
+}
+.main-library-card-text {
+  color: #000000;
+  font-size: 30px;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main-library-card-wrapper {
+  padding: 20px 20px 30px 20px;
+  border: 3px solid #BB945F;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.main-library-card-form-wrapper {
+  padding: 20px 20px 0 20px;
+  background-color: #BB945F;
+}
+.main-library-card-form-button {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.main-library-card-form-text {
+  color: #000000;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  padding-bottom: 20px;
+}
+.main-library-card-form-input {
+  padding-bottom: 25px;
+}
+.main-library-reader-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.main-library-reader-text {
+  color: #000000;
+  font-size: 30px;
+  line-height: normal;
+  letter-spacing: 0.6px;
+}
+.main-library-reader-paragraph {
+  color: #000000;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.4px;
+  text-align: right;
+  width: 456px;
+  margin: 35px 0;
+}
+
+.submit {
+  width: auto;
+  height: auto;
+  padding: 10px 40px;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

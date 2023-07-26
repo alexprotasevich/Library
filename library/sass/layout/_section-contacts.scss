@@ -92,8 +92,9 @@
             justify-content: space-between;
         }
 
-        // &-map {
-        //     width: 696px;
-        // }
+        &-map {
+            display: flex;
+            width: 100%;
+        }
     }
 }
