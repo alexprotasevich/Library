@@ -1,1 +1,91 @@
-//test
+.footer {
+    padding: 20px;
+
+    &-wrapper {
+        border-bottom: 1px solid $color-white;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+
+    &-contacts {
+        &-container {
+            width: 229px;
+
+            &-link {
+                @extend .font-inter-regular;
+                color: $color-white;
+                font-size: 15px;
+                line-height: 20px;
+
+                &:hover {
+                    color: $color-gold;
+                    cursor: pointer;
+                    transition: 1s;
+                }
+            }
+        }
+
+        &-social {
+            padding-top: 18px;
+
+            &-svg {
+                cursor: pointer;
+                fill: #F5EFDb;
+
+                &:hover {
+                    fill: $color-gold;
+                    cursor: pointer;
+                    transition: 1s;
+                }
+            }
+        }
+    }
+
+    &-worktime {
+        &-text {
+            @extend .font-inter-regular;
+            color: $color-white;
+            text-align: right;
+            font-size: 15px;
+            line-height: 20px;
+            padding-bottom: 10px;
+        }
+    }
+
+    &-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 44px 0 24px;
+
+        &-text {
+            @extend .font-inter-regular;
+            color: $color-white;
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: 2px;
+
+            &:hover {
+                color: $color-gold;
+                cursor: pointer;
+                transition: 1s;
+            }
+        }
+
+        &-left {
+            text-align: left;
+        }
+
+        &-center {
+            text-align: center;
+        }
+
+        &-right {
+            text-align: right;
+        }
+    }
+}
+
+

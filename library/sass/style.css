@@ -16,13 +16,13 @@
   font-weight: 700;
 }
 
-.font-inter-regular, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
+.font-inter-regular, .footer-container-text, .footer-worktime-text, .footer-contacts-container-link, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
   font-family: "Inter-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.font-forum, .main-library-reader-text, .main-library-card-form-text, .main-library-text, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .library-section-text, .input, h1 {
+.font-forum, .main-library-reader-text, .main-library-card-form-text, .main-library-text, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .main-welcome-text, .input, h1 {
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
@@ -58,6 +58,10 @@ a {
 
 .hidden {
   display: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .main-about-buttons-container {
@@ -186,6 +190,12 @@ input[type=number]::-webkit-inner-spin-button {
   cursor: pointer;
   transition: 1s;
 }
+.header-navigation-icon {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding-right: 20px;
+}
 .header-navigation-icon-svg {
   cursor: pointer;
   fill: #FFFFFF;
@@ -199,14 +209,19 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 20px;
 }
 
-.library {
+.main {
+  background-color: #FFFFFF;
+}
+
+.main-welcome {
+  padding-top: 220px;
   background: url(../assets/images/library_background.png), lightgray 50%/cover no-repeat;
   background-size: cover;
   height: 600px;
   background-position: center;
   position: relative;
 }
-.library::before {
+.main-welcome::before {
   content: "";
   position: absolute;
   display: block;
@@ -215,10 +230,7 @@ input[type=number]::-webkit-inner-spin-button {
   top: 0;
   background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.1) 100%);
 }
-.library-section {
-  padding-top: 220px;
-}
-.library-section-text {
+.main-welcome-text {
   color: #FFFFFF;
   background-color: #0C0C0E;
   font-size: 40px;
@@ -229,10 +241,6 @@ input[type=number]::-webkit-inner-spin-button {
   min-height: 220px;
   text-align: center;
   padding: 35px 40px;
-}
-
-.main {
-  background-color: #FFFFFF;
 }
 
 .main {
@@ -606,7 +614,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .main-contacts-map {
   display: flex;
-  width: 100%;
 }
 
 .main-library-text {
@@ -699,4 +706,73 @@ input[type=number]::-webkit-inner-spin-button {
   height: auto;
   padding: 10px 40px;
   font-size: 20px;
+}
+
+.footer {
+  padding: 20px;
+}
+.footer-wrapper {
+  border-bottom: 1px solid #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.footer-contacts-container {
+  width: 229px;
+}
+.footer-contacts-container-link {
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 20px;
+}
+.footer-contacts-container-link:hover {
+  color: #BB945F;
+  cursor: pointer;
+  transition: 1s;
+}
+.footer-contacts-social {
+  padding-top: 18px;
+}
+.footer-contacts-social-svg {
+  cursor: pointer;
+  fill: #F5EFDb;
+}
+.footer-contacts-social-svg:hover {
+  fill: #BB945F;
+  cursor: pointer;
+  transition: 1s;
+}
+.footer-worktime-text {
+  color: #FFFFFF;
+  text-align: right;
+  font-size: 15px;
+  line-height: 20px;
+  padding-bottom: 10px;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 44px 0 24px;
+}
+.footer-container-text {
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+.footer-container-text:hover {
+  color: #BB945F;
+  cursor: pointer;
+  transition: 1s;
+}
+.footer-container-left {
+  text-align: left;
+}
+.footer-container-center {
+  text-align: center;
+}
+.footer-container-right {
+  text-align: right;
 }/*# sourceMappingURL=style.css.map */
