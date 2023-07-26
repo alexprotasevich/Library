@@ -30,17 +30,15 @@
                 line-height: 40px;
                 letter-spacing: 2px;
                 text-transform: capitalize;
-            }
-
-            &-container {
-                padding: 30px 0;
+                margin-top: 20px;
+                margin-bottom: 16px;
             }
 
             &-wrapper {
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
-                padding: 20px 0 20px 0;
+                padding: 22px 0 0px 0;
 
                 &-text {
                     @extend .font-inter-regular;
@@ -58,12 +56,12 @@
                     line-height: 40px;
                     letter-spacing: 2px;
                     text-transform: capitalize;
-                    padding-left: 5px;
+                    padding-left: 9px;
 
                     &:hover {
                         color: $color-gold;
                         cursor: pointer;
-                        transition: 1s;
+                        transition: 0.5s;
                     }
                 }
 
@@ -74,19 +72,19 @@
                     line-height: 40px;
                     letter-spacing: 2px;
                     text-transform: capitalize;
-                    padding-left: 5px;
+                    padding-left: 8px;
 
                     &:hover {
                         color: $color-gold;
                         cursor: pointer;
-                        transition: 1s;
+                        transition: 0.5s;
                     }
                 }
             }
         }
 
         &-wrapper {
-            padding: 40px 20px 40px 20px;
+            padding: 40px 0 40px 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -94,6 +92,12 @@
 
         &-map {
             display: flex;
+            margin-top: 20px;
         }
     }
+}
+
+.staff {
+    margin-top: 37px;
+    margin-bottom: 0;
 }

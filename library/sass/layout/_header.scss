@@ -33,7 +33,7 @@
                         &:hover {
                             color: $color-gold;
                             cursor: pointer;
-                            transition: 1s;
+                            transition: 0.5s;
                         }
                     }
                 }
@@ -44,7 +44,6 @@
             display: flex;
             flex-wrap: wrap;
             align-content: center;
-            padding-right: 20px;
 
             &-svg {
                 cursor: pointer;
@@ -53,7 +52,7 @@
                 &:hover {
                     fill: $color-gold;
                     cursor: pointer;
-                    transition: 1s;
+                    transition: 0.5s;
                 }
             }
         }
@@ -61,7 +60,7 @@
 
     &-logo {
         &-text {
-            padding: 20px;
+            padding: 20px 20px 20px 0;
 
         }
     }

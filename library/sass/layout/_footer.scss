@@ -1,4 +1,5 @@
 .footer {
+    background-color: $color-dark;
     padding: 20px;
 
     &-wrapper {
@@ -13,6 +14,7 @@
     &-contacts {
         &-container {
             width: 229px;
+            margin-top: 2px;
 
             &-link {
                 @extend .font-inter-regular;
@@ -23,12 +25,14 @@
                 &:hover {
                     color: $color-gold;
                     cursor: pointer;
-                    transition: 1s;
+                    transition: 0.5s;
                 }
             }
         }
 
         &-social {
+            display: flex;
+            gap: 15px;
             padding-top: 18px;
 
             &-svg {
@@ -38,7 +42,7 @@
                 &:hover {
                     fill: $color-gold;
                     cursor: pointer;
-                    transition: 1s;
+                    transition: 0.5s;
                 }
             }
         }
@@ -58,7 +62,7 @@
     &-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        padding: 44px 0 24px;
+        padding: 46px 0 24px 2px;
 
         &-text {
             @extend .font-inter-regular;
@@ -67,10 +71,10 @@
             line-height: 20px;
             letter-spacing: 2px;
 
-            &:hover {
+            &:not(.left):hover {
                 color: $color-gold;
                 cursor: pointer;
-                transition: 1s;
+                transition: 0.5s;
             }
         }
 

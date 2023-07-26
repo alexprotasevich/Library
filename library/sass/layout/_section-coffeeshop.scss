@@ -1,11 +1,12 @@
 .main {
     &-coffeeshop {
-        padding: 50px 20px 40px 20px;
+        padding: 34px 0 40px 0;
 
         &-wrapper {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            margin-top: 40px;
         }
 
         &-text {
@@ -36,11 +37,10 @@
             line-height: 40px;
             letter-spacing: 2px;
             text-align: center;
-            padding-top: 40px;
+            padding-top: 60px;
         }
 
         &-container {
-            // border: 1px solid red;
             width: 438px;
 
             &-paragraph {
@@ -98,6 +98,7 @@
 
 .right-align {
     text-align: right;
+
     &::after {
         left: 292px;
     }

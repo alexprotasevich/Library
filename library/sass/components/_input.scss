@@ -12,8 +12,8 @@ input[type="number"]::-webkit-inner-spin-button {
     line-height: 50px;
     letter-spacing: 0.6px;
     outline: none;
-    border: 1px solid $color-white;
+    border: 8px solid $color-white;
     border-radius: 10px;
     background: $color-white;
-    text-indent: 20px;
+    text-indent: 10px;
 }

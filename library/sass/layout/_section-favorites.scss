@@ -27,14 +27,13 @@
             color: $color-black;
             font-size: 20px;
             line-height: normal;
-            padding: 61px 0 40px 20px;
+            padding: 61px 0 36px 0;
         }
 
         &-input {
             display: flex;
             flex-wrap: wrap;
-            gap: 90px;
-            padding: 0 0 0 15px;
+            gap: 81px;
 
             &-label {
                 @extend .font-inter-regular;
@@ -89,7 +88,6 @@
         }
 
         &-wrapper {
-            padding: 0 20px 0 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -97,7 +95,8 @@
             &-pick {
                 width: 590px;
                 position: relative;
-                margin-top: 40px;
+                margin-top: 34px;
+                margin-bottom: 5px;
                 min-height: 555px;
 
                 &-wrapper {
@@ -135,6 +134,7 @@
                         position: relative;
                     }
                 }
+
                 &-name {
                     @extend .font-inter-bold;
                     color: $color-black;
@@ -170,6 +170,7 @@
                 &-button {
                     padding: 15px 0 15px 0;
                 }
+
                 &-img {
                     position: absolute;
                     right: 0;
