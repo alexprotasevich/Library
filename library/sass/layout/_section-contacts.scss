@@ -1,0 +1,103 @@
+.main {
+    &-contacts {
+        &-text {
+            @extend .font-forum;
+            color: $color-dark;
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            text-align: center;
+            padding-top: 20px;
+
+            &::after {
+                content: "";
+                background-color: $color-dark;
+                height: 1px;
+                width: 50px;
+                display: block;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 20px);
+            }
+        }
+
+        &-info {
+            &-text {
+                @extend .font-inter-bold;
+                color: $color-black;
+                font-size: 20px;
+                line-height: 40px;
+                letter-spacing: 2px;
+                text-transform: capitalize;
+                margin-top: 20px;
+                margin-bottom: 16px;
+            }
+
+            &-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                padding: 22px 0 0px 0;
+
+                &-text {
+                    @extend .font-inter-regular;
+                    color: $color-black;
+                    font-size: 20px;
+                    line-height: 40px;
+                    letter-spacing: 2px;
+                    text-transform: capitalize;
+                }
+
+                &-tel {
+                    @extend .font-inter-regular;
+                    color: $color-black;
+                    font-size: 20px;
+                    line-height: 40px;
+                    letter-spacing: 2px;
+                    text-transform: capitalize;
+                    padding-left: 9px;
+
+                    &:hover {
+                        color: $color-gold;
+                        cursor: pointer;
+                        transition: 0.5s;
+                    }
+                }
+
+                &-mail {
+                    @extend .font-inter-bold;
+                    color: $color-black;
+                    font-size: 20px;
+                    line-height: 40px;
+                    letter-spacing: 2px;
+                    text-transform: capitalize;
+                    padding-left: 8px;
+
+                    &:hover {
+                        color: $color-gold;
+                        cursor: pointer;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+
+        &-wrapper {
+            padding: 40px 0 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &-map {
+            display: flex;
+            margin-top: 20px;
+        }
+    }
+}
+
+.staff {
+    margin-top: 37px;
+    margin-bottom: 0;
+}

@@ -1,0 +1,82 @@
+.main {
+    &-about {
+        &-buttons {
+            &-container {
+                cursor: pointer;
+                height: 26px;
+                width: 26px;
+                display: inline-block;
+                background-color: $color-white;
+
+                &-left {
+                    cursor: pointer;
+                    height: 16px;
+                    width: 16px;
+                    background-color: $color-gold;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                }
+
+                &-center {
+                    cursor: pointer;
+                    height: 16px;
+                    width: 16px;
+                    background-color: $color-dark;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                }
+
+                &-right {
+                    cursor: pointer;
+                    height: 16px;
+                    width: 16px;
+                    background-color: $color-dark;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                }
+            }
+        }
+    }
+}
+
+.button-active {
+    @extend .font-inter-bold;
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    color: $color-dark;
+    text-align: center;
+    font-size: 10px;
+    line-height: normal;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: 1px solid $color-dark;
+    background-color: $color-white;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+        cursor: pointer;
+        transition: 0.5s;
+        border-radius: 2px;
+        border: 1px solid $color-gold;
+        background: $color-gold;
+    }
+
+    &:disabled {
+        @extend .font-inter-bold;
+        width: 75px;
+        height: 30px;
+        flex-shrink: 0;
+        color: $color-gold;
+        text-align: center;
+        font-size: 10px;
+        line-height: normal;
+        letter-spacing: 1px;
+        border-radius: 2px;
+        border: 1px solid $color-gold;
+        cursor: default;
+    }
+}
