@@ -35,6 +35,10 @@
             gap: 15px;
             padding-top: 18px;
 
+            &-li {
+                list-style-type: none;
+            }
+
             &-svg {
                 cursor: pointer;
                 fill: #F5EFDb;

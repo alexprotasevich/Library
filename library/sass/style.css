@@ -69,7 +69,6 @@ html {
   cursor: pointer;
   height: 26px;
   width: 26px;
-  border-radius: 50%;
   display: inline-block;
   background-color: #FFFFFF;
 }
@@ -750,6 +749,9 @@ input[type=number]::-webkit-inner-spin-button {
   display: flex;
   gap: 15px;
   padding-top: 18px;
+}
+.footer-contacts-social-li {
+  list-style-type: none;
 }
 .footer-contacts-social-svg {
   cursor: pointer;
