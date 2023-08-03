@@ -76,7 +76,23 @@
     .header {
         &-navigation {
             &-nav {
-                display: none;
+                display: flex;
+                position: fixed;
+                flex-direction: column;
+                width: 358px;
+                background-color: #0C0C0E;
+                height: 510px;
+                z-index: 10;
+                right: -100%;
+                top: 60px;
+                transition: 0.5s ;
+                padding-top: 39px;
+                overflow: hidden;
+
+                .header-navigation-nav-list{
+                    flex-direction: column;
+                    align-items: center;
+                }
             }
         }
     }
@@ -86,6 +102,15 @@
         width: 45px;
         line-height: 10px;
         padding-bottom: 8px;
+
+        &:hover {
+            & > .line{
+                border: 1.5px solid $color-gold;
+                transition: 0.5s;
+            }
+
+            cursor: pointer;
+        }
     }
 
     .line {
@@ -97,9 +122,30 @@
 
 @media screen and (min-width: 320px) and (max-width: 640px) {
     .header {
+        &-logo {
+            &-text {
+                font-size: 20px;
+            }
+        }
         &-navigation {
             &-nav {
-                display: none;
+                display: flex;
+                position: fixed;
+                flex-direction: column;
+                width: 358px;
+                background-color: #0C0C0E;
+                height: 510px;
+                z-index: 10;
+                right: -100%;
+                top: 60px;
+                transition: 0.5s ;
+                padding-top: 39px;
+                overflow: hidden;
+
+                .header-navigation-nav-list{
+                    flex-direction: column;
+                    align-items: center;
+                }
             }
         }
     }
@@ -109,11 +155,68 @@
         width: 45px;
         line-height: 10px;
         padding-bottom: 8px;
+
+        &:hover {
+            & > .line{
+                border: 1.5px solid $color-gold;
+                transition: 0.5s;
+            }
+
+            cursor: pointer;
+        }
     }
 
     .line {
         display: inline-block;
         border: 1.5px solid $color-white;
         width: 100%;
+    }
+}
+
+//burger menu
+
+.burger-navigation {
+    right: 0;
+}
+
+@keyframes example {
+    0% {
+        display: flex;
+    }
+    100% {
+        right: 0;
+    }
+  }
+
+.cross-lines {
+
+
+    .line {
+        width: 45px;
+    }
+    .line1 {
+        transform: rotate(45deg);
+    }
+    .line2 {
+        transform: scaleY(0);
+    }
+    .line3 {
+        transform: rotate(-45deg);
+    }
+}
+
+.line {
+    &.line1{
+        transform-origin: 7px -1px;;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    &.line2 {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &.line3{
+        transform-origin: 7px 5px;
+        transition: transform 0.4s ease-in-out;
     }
 }
