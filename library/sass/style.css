@@ -208,6 +208,42 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 20px 20px 20px 0;
 }
 
+.hamburger-lines {
+  display: none;
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .header-navigation-nav {
+    display: none;
+  }
+  .hamburger-lines {
+    display: inline-block;
+    width: 45px;
+    line-height: 10px;
+    padding-bottom: 8px;
+  }
+  .line {
+    display: inline-block;
+    border: 1.5px solid #FFFFFF;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .header-navigation-nav {
+    display: none;
+  }
+  .hamburger-lines {
+    display: inline-block;
+    width: 45px;
+    line-height: 10px;
+    padding-bottom: 8px;
+  }
+  .line {
+    display: inline-block;
+    border: 1.5px solid #FFFFFF;
+    width: 100%;
+  }
+}
 .main {
   background-color: #FFFFFF;
 }
