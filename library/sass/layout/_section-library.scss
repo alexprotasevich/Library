@@ -117,3 +117,105 @@
     padding: 10px 40px 9px 38px;
     font-size: 20px;
 }
+
+//media
+
+@media screen and (min-width: 1024px) and (max-width: 1160px) {
+    .main {
+        &-library {
+            &-wrapper {
+                flex-direction: column;
+                 align-items: center;
+            }
+
+            &-reader {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &-paragraph {
+                    width: 600px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .main {
+        &-library {
+            &-text {
+                padding-top: 23px;
+            }
+
+            &-wrapper {
+                flex-direction: column;
+                 align-items: center;
+            }
+
+            &-reader {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &-paragraph {
+                    width: 600px;
+                    text-align: center;
+                    margin: 40px 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 639px) {
+    .main {
+        &-library {
+            &-wrapper {
+                flex-direction: column;
+                 align-items: center;
+            }
+
+            &-reader {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &-paragraph {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            &-card {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .main {
+        &-library {
+            &-wrapper {
+                flex-direction: column;
+                 align-items: center;
+            }
+
+            &-reader {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &-paragraph {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            &-card {
+                width: 100%;
+            }
+        }
+    }
+}

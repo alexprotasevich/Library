@@ -96,4 +96,24 @@
     }
 }
 
+//media
 
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .footer {
+        padding: 19px;
+
+        &-container {
+            grid-template-columns: 1fr 2fr 1fr;
+
+            &-text {
+                &.rolling {
+                    margin-left: 3px;
+                }
+            }
+
+            &-center {
+                text-align: left;
+            }
+        }
+    }
+}
