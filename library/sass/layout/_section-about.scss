@@ -130,3 +130,43 @@
         }
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    .main {
+        &-about {
+            &-gallery {
+                gap: 58px;
+                align-items: center;
+
+                &-buttons {
+                    margin-top: 37px;
+                    border: none;
+                    display: flex;
+                    align-content: center;
+                    flex-wrap: wrap;
+                    width: 24px;
+                    height: 24px;
+                    background: none;
+
+                    &-svg {
+                        cursor: pointer;
+
+                        &:hover {
+                            fill: $color-black;
+                            cursor: pointer;
+                            transition: 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .image2 {
+        display: none;
+    }
+
+    .image3 {
+        display: none;
+    }
+}
