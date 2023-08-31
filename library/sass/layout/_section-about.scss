@@ -1,4 +1,15 @@
 .main {
+//     .main-about-gallery:not(:first-child) {
+//             visibility: hidden;
+//     }
+//     .main-about-gallery {
+//         visibility: visible;
+// }
+
+    // .slider:not(:first-child) {
+    //     display: none;
+    // }
+
     background-color: $color-white;
 
     &-about {
@@ -39,6 +50,16 @@
             justify-content: center;
 
             &-img {
+                animation-name: animation;
+                animation-duration: 1.4s;
+                transition: top 1s ease-out 0.5s;
+
+                @keyframes animation {
+                    from {opacity: .4} 
+                    to {opacity: 4}
+                  }
+
+
                 &-width {
                     width: 100%;
                 }
@@ -72,13 +93,12 @@
 //media
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
-    .image2 {
-        display: none;
-    }
-
-    .image3 {
-        display: none;
-    }
+    // .slider:not(:nth-child(1)) {
+    //     display: none;
+    // }
+    // .main-about-gallery:not(:nth-child(2)) {
+    //     display: none;
+    // }
 
 
     .main {

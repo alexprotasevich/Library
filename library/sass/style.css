@@ -72,50 +72,20 @@ html {
   display: inline-block;
   background-color: #FFFFFF;
 }
-.main-about-buttons-container-left {
+.main-about-buttons-container-dots {
   cursor: pointer;
   height: 16px;
   width: 16px;
+  background-color: #0C0C0E;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.main-about-buttons-container-dots:hover {
   background-color: #BB945F;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
 }
-.main-about-buttons-container-center {
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
-  background-color: #0C0C0E;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.main-about-buttons-container-right {
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
-  background-color: #0C0C0E;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.main-about-buttons-container-button4 {
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
-  background-color: #0C0C0E;
-  border-radius: 50%;
-  display: none;
-  transition: background-color 0.6s ease;
-}
-.main-about-buttons-container-button5 {
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
-  background-color: #0C0C0E;
-  border-radius: 50%;
-  display: none;
-  transition: background-color 0.6s ease;
+.main-about-buttons-container-dots.active {
+  background-color: #BB945F;
 }
 
 .button-active {
@@ -418,6 +388,19 @@ input[type=number]::-webkit-inner-spin-button {
   gap: 25px;
   justify-content: center;
 }
+.main-about-gallery-img {
+  animation-name: animation;
+  animation-duration: 1.4s;
+  transition: top 1s ease-out 0.5s;
+}
+@keyframes animation {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 4;
+  }
+}
 .main-about-gallery-img-width {
   width: 100%;
 }
@@ -439,12 +422,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
-  .image2 {
-    display: none;
-  }
-  .image3 {
-    display: none;
-  }
   .main-about-gallery {
     gap: 58px;
     align-items: center;
