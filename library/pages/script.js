@@ -1,3 +1,6 @@
+// library-part2
+// burger-menu
+
 const menu = document.getElementById('menu');
 const navigation = document.getElementById('navigation');
 
@@ -31,3 +34,5 @@ function closeBurgerMenu(){
     navigation.classList.toggle("burger-navigation");
     menu.classList.toggle("cross-lines");
 }
+
+// library-part3
