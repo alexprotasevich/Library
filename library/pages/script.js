@@ -112,7 +112,7 @@ function showSlider(n) {
 function getAmountOfSliderBlocks(){
     const width = document.body.clientWidth;
     amountOfVisibleElements = width < 1008 ? 1 : 3;
-    console.log(width)
+    // console.log(width)
 }
 
 //width window
@@ -130,3 +130,49 @@ window.addEventListener('resize',(e) => {
 
 //slider favorites
 
+const input = document.getElementsByClassName("main-favorites-input-label-radio");
+const bookCard = document.getElementsByClassName("main-favorites-wrapper-pick");
+
+addEventListenerToInput();
+updateBookVisibility(0,3);
+
+function addEventListenerToInput(){
+    for (let i = 0; i < input.length; i++){
+        input[i].addEventListener("click", (e) => {
+            console.log("click", e);
+            let from = 0;
+            let to = 3;
+
+            switch (e.target.id) {
+                case "check1" :
+                    from = 0;
+                    to = 3;
+                    break;
+                case "check2" :
+                    from = 4;
+                    to = 7;
+                    break;
+                case "check3" :
+                    from = 8;
+                    to = 11;
+                    break;
+                case "check4" :
+                    from = 12;
+                    to = 15;
+                    break;
+                }
+
+                updateBookVisibility(from, to);
+        })
+    }
+}
+
+function updateBookVisibility(from, to){
+    for (let i = 0; i < bookCard.length; i++){
+        if ( i >= from && i <= to){
+            bookCard[i].style.display = "block";
+        } else {
+            bookCard[i].style.display = "none"
+        }
+    }
+}
