@@ -38,12 +38,14 @@ function closeBurgerMenu(){
 
 
 // library-part3
-//slider
+//slider about
 
 const slider = document.getElementsByClassName("slider");
 const buttonsCircle = document.getElementsByClassName("main-about-buttons-container-dots");
 const buttonContainer = document.getElementsByClassName("main-about-buttons-container");
-const buttonArrow = document.getElementsByClassName("main-about-gallery-buttons");
+const buttonArrow = document.getElementsByClassName("main-about-gallery-buttons-svg");
+const btnLeft = document.getElementById("buttonLeft");
+const btnRight = document.getElementById("buttonRight");
 
 let amountOfVisibleElements;
 
@@ -54,7 +56,7 @@ addEventListenerToArrow();
 showSlider(sliderIndex);
 
 function plusSlider(n) {
-  showSlider(sliderIndex += n);
+  showSlider(sliderIndex = sliderIndex + n);
 }
 
 function currentSlider(n) {
@@ -62,11 +64,14 @@ function currentSlider(n) {
 }
 
 function addEventListenerToArrow(){
-    for(let i = 0; i < buttonArrow.length; i++){
-        buttonArrow[i].addEventListener("click", () => {
-            plusSlider(i);
-        })
-    }
+
+    btnLeft.addEventListener("click", () => {
+        plusSlider(-1);
+    })
+    btnRight.addEventListener("click", () => {
+        plusSlider(1);
+    })
+
 }
 
 function addEventListenerToDots(){
@@ -90,10 +95,22 @@ function showSlider(n) {
         slider[i].style.display = "block";
     }
     buttonsCircle[sliderIndex-1].className += " active";
+    if (sliderIndex === slider.length) {
+        btnRight.disabled = true;
+    } else {
+        btnRight.disabled = false
+    }
+
+    if (sliderIndex === 1) {
+        btnLeft.disabled = true;
+    } else {
+        btnLeft.disabled = false
+    }
+
 }
 
 function getAmountOfSliderBlocks(){
-    const width= document.body.clientWidth;
+    const width = document.body.clientWidth;
     amountOfVisibleElements = width < 1008 ? 1 : 3;
     console.log(width)
 }
@@ -110,3 +127,6 @@ window.addEventListener('resize',(e) => {
         }
     }
 });
+
+//slider favorites
+

@@ -57,10 +57,6 @@ a {
   text-decoration: none;
 }
 
-.hidden {
-  display: none;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -398,7 +394,7 @@ input[type=number]::-webkit-inner-spin-button {
     opacity: 0.4;
   }
   to {
-    opacity: 4;
+    opacity: 1;
   }
 }
 .main-about-gallery-img-width {
@@ -435,6 +431,12 @@ input[type=number]::-webkit-inner-spin-button {
     width: 24px;
     height: 24px;
     background: none;
+  }
+  .main-about-gallery-buttons:disabled {
+    pointer-events: none;
+  }
+  .main-about-gallery-buttons:disabled .main-about-gallery-buttons-svg path {
+    stroke: rgb(192, 192, 192);
   }
   .main-about-gallery-buttons-svg {
     cursor: pointer;
