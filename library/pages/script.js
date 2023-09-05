@@ -90,11 +90,13 @@ function showSlider(n) {
     }
     for (let i = 0; i < buttonsCircle.length; i++) {
         buttonsCircle[i].className = buttonsCircle[i].className.replace("active", "");
+        buttonContainer[i].className = buttonContainer[i].className.replace("active", "")
     }
     for (let i = sliderIndex-1; i < sliderIndex - 1 + amountOfVisibleElements; i++) {
         slider[i].style.display = "block";
     }
     buttonsCircle[sliderIndex-1].className += " active";
+    buttonContainer[sliderIndex-1].className += " active";
     if (sliderIndex === slider.length) {
         btnRight.disabled = true;
     } else {
@@ -112,7 +114,6 @@ function showSlider(n) {
 function getAmountOfSliderBlocks(){
     const width = document.body.clientWidth;
     amountOfVisibleElements = width < 1008 ? 1 : 3;
-    // console.log(width)
 }
 
 //width window
@@ -132,11 +133,14 @@ window.addEventListener('resize',(e) => {
 
 const input = document.getElementsByClassName("main-favorites-input-label-radio");
 const bookCard = document.getElementsByClassName("main-favorites-wrapper-pick");
+let animationId = [];
 
 addEventListenerToInput();
-updateBookVisibility(0,3);
+updateBookVisibility(0, 3, true);
 
 function addEventListenerToInput(){
+    // animationId.forEach(id => cancelAnimationFrame(id));
+    // animationId = [];
     for (let i = 0; i < input.length; i++){
         input[i].addEventListener("click", (e) => {
             console.log("click", e);
@@ -162,17 +166,65 @@ function addEventListenerToInput(){
                     break;
                 }
 
-                updateBookVisibility(from, to);
+            updateBookVisibility(from, to);
         })
     }
 }
 
-function updateBookVisibility(from, to){
+function updateBookVisibility(from, to, withoutAnimation){
     for (let i = 0; i < bookCard.length; i++){
-        if ( i >= from && i <= to){
-            bookCard[i].style.display = "block";
+        if(withoutAnimation) {
+            if(i >= from && i <= to){
+                bookCard[i].style.display = "block"
+            }
         } else {
-            bookCard[i].style.display = "none"
+            if (bookCard[i].style.display === "block") {
+                bookCard[i].style.opacity = 1;
+                animateOpacityHide(bookCard[i], 300);
+            }
+
+            if ( i >= from && i <= to){
+                bookCard[i].style.opacity = 0;
+                animateOpacity(bookCard[i], 600);
+            }
         }
     }
+}
+
+function animateOpacity(element, duration) {
+    let start;
+
+    element.style.opacity = 0;
+    function step(timestamp) {
+        if (!start) {
+            start = timestamp + 300;
+        }
+        let opacity;
+        if (timestamp - start > 0) {
+            element.style.display = "block";
+            opacity = (timestamp - start)  / duration;
+            element.style.opacity = opacity;
+        }
+        if (opacity >= 1) {
+            return;
+        }
+        requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+}
+
+function animateOpacityHide(element, duration) {
+    let start;
+
+    function step(timestamp) {
+        if (!start) start = timestamp;
+        const opacity = (timestamp - start) / duration;
+        element.style.opacity = 1 - opacity;
+        if (opacity >= 1) {
+            element.style.display = "none";
+            return;
+        }
+         requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
 }

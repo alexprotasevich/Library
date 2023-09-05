@@ -182,6 +182,17 @@
     }
 }
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .main {
+        &-favorites {
+            &-input {
+                gap: 0;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
     .main {
         &-favorites {

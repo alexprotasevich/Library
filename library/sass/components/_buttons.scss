@@ -7,6 +7,11 @@
                 width: 26px;
                 display: inline-block;
                 background-color: $color-white;
+                // pointer-events: none;
+                
+                &.active {
+                    pointer-events: none;
+                }
 
                 &-dots {
                     cursor: pointer;
@@ -21,6 +26,11 @@
                         background-color: $color-gold;
                     }
                     &.active {
+                        background-color: $color-gold;
+                        pointer-events: none;
+                    }
+
+                    &.disable {
                         background-color: $color-gold;
                     }
                 }

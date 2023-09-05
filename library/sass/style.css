@@ -68,6 +68,9 @@ html {
   display: inline-block;
   background-color: #FFFFFF;
 }
+.main-about-buttons-container.active {
+  pointer-events: none;
+}
 .main-about-buttons-container-dots {
   cursor: pointer;
   height: 16px;
@@ -81,6 +84,10 @@ html {
   background-color: #BB945F;
 }
 .main-about-buttons-container-dots.active {
+  background-color: #BB945F;
+  pointer-events: none;
+}
+.main-about-buttons-container-dots.disable {
   background-color: #BB945F;
 }
 
@@ -642,6 +649,12 @@ input[type=number]::-webkit-inner-spin-button {
   bottom: 0;
 }
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .main-favorites-input {
+    gap: 0;
+    justify-content: space-between;
+  }
+}
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .main-favorites-wrapper {
     justify-content: center;
