@@ -182,12 +182,32 @@
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .main {
+        &-favorites {
+            &-paragraph {
+                padding-top: 0;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+            }
+            &-input {
+                position: sticky;
+                top: 30px;
+                z-index: 11;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
     .main {
         &-favorites {
             &-input {
                 gap: 0;
                 justify-content: space-between;
+
             }
         }
     }
@@ -225,4 +245,10 @@
             }
         }
     }
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }

@@ -7,8 +7,7 @@
                 width: 26px;
                 display: inline-block;
                 background-color: $color-white;
-                // pointer-events: none;
-                
+
                 &.active {
                     pointer-events: none;
                 }

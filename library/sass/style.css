@@ -10,13 +10,13 @@
   font-family: "Forum";
   src: url("../assets/fonts/Forum-Regular.ttf");
 }
-.font-inter-bold, .main-contacts-info-wrapper-mail, .main-contacts-info-text, .main-favorites-wrapper-pick-author, .main-favorites-wrapper-pick-name, .main-favorites-paragraph, .button-active:disabled, .button-active {
+.font-inter-bold, .profile-content-text, .main-contacts-info-wrapper-mail, .main-contacts-info-text, .main-favorites-wrapper-pick-author, .main-favorites-wrapper-pick-name, .main-favorites-paragraph, .button-active:disabled, .button-active {
   font-family: "Inter-Bold";
   font-style: normal;
   font-weight: 700;
 }
 
-.font-inter-regular, .footer-container-text, .footer-worktime-text, .footer-contacts-container-link, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
+.font-inter-regular, .profile-content-register, .profile-content-login, .footer-container-text, .footer-worktime-text, .footer-contacts-container-link, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
   font-family: "Inter-Regular";
   font-style: normal;
   font-weight: 400;
@@ -150,6 +150,7 @@ input[type=number]::-webkit-inner-spin-button {
   justify-content: space-between;
   background: #0C0C0E;
   flex-wrap: wrap;
+  position: relative;
 }
 .header-navigation {
   display: flex;
@@ -390,19 +391,6 @@ input[type=number]::-webkit-inner-spin-button {
   display: flex;
   gap: 25px;
   justify-content: center;
-}
-.main-about-gallery-img {
-  animation-name: animation;
-  animation-duration: 1.4s;
-  transition: top 1s ease-out 0.5s;
-}
-@keyframes animation {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
 }
 .main-about-gallery-img-width {
   width: 100%;
@@ -649,7 +637,20 @@ input[type=number]::-webkit-inner-spin-button {
   bottom: 0;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .main-favorites-paragraph {
+    padding-top: 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .main-favorites-input {
+    position: sticky;
+    top: 30px;
+    z-index: 11;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .main-favorites-input {
     gap: 0;
     justify-content: space-between;
@@ -670,6 +671,12 @@ input[type=number]::-webkit-inner-spin-button {
     width: 100%;
   }
 }
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
 .main-coffeeshop {
   padding: 35px 0 40px 0;
 }
@@ -1149,5 +1156,119 @@ input[type=number]::-webkit-inner-spin-button {
   }
   .footer-container-center {
     text-align: left;
+  }
+}
+.profile {
+  display: none;
+  z-index: 12;
+  position: absolute;
+  width: 80px;
+  height: 115px;
+  background-color: #FFFFFF;
+  top: 0;
+  right: 0;
+  margin: 59px 20px 0 0;
+  box-shadow: 4px 4px 23px 4px rgba(173, 177, 180, 0.44);
+}
+.profile-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-content-text {
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 5px;
+}
+.profile-content-text::after {
+  content: "";
+  background-color: #BB945F;
+  height: 1px;
+  width: 40px;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 5px);
+}
+.profile-content-login {
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.profile-content-login:hover {
+  color: #BB945F;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.profile-content-register {
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.profile-content-register:hover {
+  color: #BB945F;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9998;
+  background-color: rgba(187, 148, 95, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.modal-register {
+  position: relative;
+  max-width: 250px;
+  padding: 20px 25px;
+  z-index: 1;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 23px 4px rgba(173, 177, 180, 0.44);
+  transform: scale(0);
+  transition: transform 0.8s;
+}
+.modal-register-close {
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.modal-register-close-svg {
+  cursor: pointer;
+}
+.modal-register-close-svg path {
+  stroke: #0C0C0E;
+}
+.modal-register-close-svg:hover path {
+  stroke: #BB945F;
+  transition: 0.5s;
+}
+
+.modal-wrapper.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-wrapper.open .modal-register {
+  transform: scale(1);
+}
+
+@media screen and (min-width: 400px) and (max-width: 1024px) {
+  .profile {
+    margin: 59px 105px 0 0;
   }
 }/*# sourceMappingURL=style.css.map */

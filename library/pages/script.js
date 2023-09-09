@@ -3,6 +3,21 @@
 
 const menu = document.getElementById('menu');
 const navigation = document.getElementById('navigation');
+const slider = document.getElementsByClassName("slider");
+const buttonsCircle = document.getElementsByClassName("main-about-buttons-container-dots");
+const buttonContainer = document.getElementsByClassName("main-about-buttons-container");
+const buttonArrow = document.getElementsByClassName("main-about-gallery-buttons-svg");
+const btnLeft = document.getElementById("buttonLeft");
+const btnRight = document.getElementById("buttonRight");
+const input = document.getElementsByClassName("main-favorites-input-label-radio");
+const bookCard = document.getElementsByClassName("main-favorites-wrapper-pick");
+const openProfileBtn = document.getElementById("open-profile-btn");
+const profileLoginWindow = document.getElementById("profile-login");
+const clickRegister = document.getElementById("open-register");
+const modalWrapper = document.getElementById("modal-wrapper");
+const closeRegister = document.getElementById("close-register");
+
+
 
 menu.addEventListener( "click" , () => {
     closeBurgerMenu();
@@ -11,9 +26,20 @@ menu.addEventListener( "click" , () => {
 document.addEventListener("click", (event) => {
     const isClosestBurger = event.target.closest('#navigation');
     const isClosestMenu = event.target.closest('#menu');
+    const isClosestProfileLogo = event.target.closest('#open-profile-btn');
+    const isClosestProfileLogonWindow = event.target.closest('#profile-login');
+    const isClosestRegisterForm = event.target.closest("#modal-register");
+    const isRegisterButton = event.target.closest("#open-register");
 
     if(!isClosestBurger && !isClosestMenu && navigation.classList.contains("burger-navigation")){
         closeBurgerMenu();
+    }
+
+    if(!isClosestProfileLogonWindow && profileLoginWindow.style.display === "block" && !isClosestProfileLogo) {
+        closeProfileLoginWindow();
+    }
+    if(!isClosestRegisterForm && modalWrapper.classList.contains("open") && !isRegisterButton) {
+        closeModalRegistrationForm()
     }
 })
 
@@ -39,13 +65,6 @@ function closeBurgerMenu(){
 
 // library-part3
 //slider about
-
-const slider = document.getElementsByClassName("slider");
-const buttonsCircle = document.getElementsByClassName("main-about-buttons-container-dots");
-const buttonContainer = document.getElementsByClassName("main-about-buttons-container");
-const buttonArrow = document.getElementsByClassName("main-about-gallery-buttons-svg");
-const btnLeft = document.getElementById("buttonLeft");
-const btnRight = document.getElementById("buttonRight");
 
 let amountOfVisibleElements;
 
@@ -83,21 +102,30 @@ function addEventListenerToDots(){
 }
 
 function showSlider(n) {
-    if (n > slider.length) {sliderIndex = 1}
-    if (n < 1) {sliderIndex = slider.length}
+    if (n > slider.length) {
+        sliderIndex = 1;
+    }
+    if (n < 1) {
+        sliderIndex = slider.length;
+    }
     for (let i = 0; i < slider.length; i++) {
+        // slider.classList.add("slideLeft");
         slider[i].style.display = "none";
     }
     for (let i = 0; i < buttonsCircle.length; i++) {
+        // slider[i].classList.add("slideRight");
         buttonsCircle[i].className = buttonsCircle[i].className.replace("active", "");
         buttonContainer[i].className = buttonContainer[i].className.replace("active", "")
     }
     for (let i = sliderIndex-1; i < sliderIndex - 1 + amountOfVisibleElements; i++) {
+        // slider[i].classList.add("slideRight");
+        // slider[i].classList.add("slideLeft");
         slider[i].style.display = "block";
     }
     buttonsCircle[sliderIndex-1].className += " active";
     buttonContainer[sliderIndex-1].className += " active";
     if (sliderIndex === slider.length) {
+
         btnRight.disabled = true;
     } else {
         btnRight.disabled = false
@@ -131,8 +159,6 @@ window.addEventListener('resize',(e) => {
 
 //slider favorites
 
-const input = document.getElementsByClassName("main-favorites-input-label-radio");
-const bookCard = document.getElementsByClassName("main-favorites-wrapper-pick");
 let animationId = [];
 
 addEventListenerToInput();
@@ -227,4 +253,52 @@ function animateOpacityHide(element, duration) {
          requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
+}
+
+//fixed slider favorites
+
+// const menuFixed = document.getElementById("input");
+
+// window.onscroll = function() {
+//     const width = document.body.clientWidth;
+//     const scrolled = window.scrollX || document.documentElement.scrollTop;
+//     if (width < 769) {
+//         if(scrolled >= 200) {
+//             menuFixed.classList.add('fixed');
+//         } else {
+//             menuFixed.classList.remove('fixed');
+//         }
+//     }
+//   }
+
+
+
+//popup
+
+//click user icon
+
+openProfileBtn.addEventListener("click", () => {
+    if(profileLoginWindow.style.display === "block") {
+        profileLoginWindow.style.display = "none";
+    } else {
+        profileLoginWindow.style.display = "block";
+    }
+});
+
+function closeProfileLoginWindow() {
+    profileLoginWindow.style.display = "none";
+}
+
+//click register
+
+clickRegister.addEventListener("click", () => {
+    modalWrapper.classList.add("open");
+    closeProfileLoginWindow();
+})
+closeRegister.addEventListener("click", () => {
+    closeModalRegistrationForm();
+})
+
+function closeModalRegistrationForm() {
+    modalWrapper.classList.remove("open");
 }
