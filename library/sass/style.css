@@ -1298,6 +1298,10 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: 10px;
   letter-spacing: 1px;
   text-decoration-line: underline;
+  cursor: pointer;
+}
+.modal-register-down-link:hover {
+  color: #BB945F;
 }
 
 .modal-wrapper.open {

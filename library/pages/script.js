@@ -1,5 +1,5 @@
 // library-part2
-// burger-menu
+//const
 
 const menu = document.getElementById('menu');
 const navigation = document.getElementById('navigation');
@@ -14,10 +14,22 @@ const bookCard = document.getElementsByClassName("main-favorites-wrapper-pick");
 const openProfileBtn = document.getElementById("open-profile-btn");
 const profileLoginWindow = document.getElementById("profile-login");
 const clickRegister = document.getElementById("open-register");
-const modalWrapper = document.getElementById("modal-wrapper");
+const modalWrapperRegister = document.getElementById("modal-wrapper-register");
 const closeRegister = document.getElementById("close-register");
+const clickRegisterInLibrary = document.getElementById("sign-up-library");
+
+const clickLogin = document.getElementById("open-login");
+const modalWrapperLogin = document.getElementById("modal-wrapper-login");
+const closeLogin = document.getElementById("close-login");
+const clickLoginInLibrary = document.getElementById("log-in-library");
+
+const clickLoginInRegister = document.getElementById("redirects-login");
+const clickRegisterInLogin = document.getElementById("redirects-register");
 
 
+
+
+// burger-menu
 
 menu.addEventListener( "click" , () => {
     closeBurgerMenu();
@@ -27,19 +39,44 @@ document.addEventListener("click", (event) => {
     const isClosestBurger = event.target.closest('#navigation');
     const isClosestMenu = event.target.closest('#menu');
     const isClosestProfileLogo = event.target.closest('#open-profile-btn');
-    const isClosestProfileLogonWindow = event.target.closest('#profile-login');
+    const isClosestProfileLogoWindow = event.target.closest('#profile-login');
     const isClosestRegisterForm = event.target.closest("#modal-register");
     const isRegisterButton = event.target.closest("#open-register");
+    const isRegisterButtonLibrary = event.target.closest("#sign-up-library");
 
-    if(!isClosestBurger && !isClosestMenu && navigation.classList.contains("burger-navigation")){
-        closeBurgerMenu();
+    const isClosestLoginForm = event.target.closest("#modal-login");
+    const isLoginButton = event.target.closest("#open-login");
+    const isLoginButtonLibrary = event.target.closest("#log-in-library");
+
+    const isClickLoginInRegister = event.target.closest("#redirects-login");
+    const isClickRegisterInLogin = event.target.closest("#redirects-register");
+
+    if (!isClosestBurger
+        && !isClosestMenu
+        && navigation.classList.contains("burger-navigation")){
+            closeBurgerMenu();
     }
 
-    if(!isClosestProfileLogonWindow && profileLoginWindow.style.display === "block" && !isClosestProfileLogo) {
-        closeProfileLoginWindow();
+    if (!isClosestProfileLogoWindow
+        && profileLoginWindow.style.display === "block"
+        && !isClosestProfileLogo) {
+            closeProfileLoginWindow();
     }
-    if(!isClosestRegisterForm && modalWrapper.classList.contains("open") && !isRegisterButton) {
-        closeModalRegistrationForm()
+
+    if (!isClosestRegisterForm
+        && modalWrapperRegister.classList.contains("open")
+        && !isRegisterButton
+        && !isRegisterButtonLibrary
+        && !isClickRegisterInLogin) {
+            closeModalRegistrationForm();
+    }
+
+    if (!isClosestLoginForm
+        && modalWrapperLogin.classList.contains("open")
+        && !isLoginButton
+        && !isLoginButtonLibrary
+        && !isClickLoginInRegister) {
+            closeModalLoginForm()
     }
 })
 
@@ -64,6 +101,7 @@ function closeBurgerMenu(){
 
 
 // library-part3
+
 //slider about
 
 let amountOfVisibleElements;
@@ -109,17 +147,13 @@ function showSlider(n) {
         sliderIndex = slider.length;
     }
     for (let i = 0; i < slider.length; i++) {
-        // slider.classList.add("slideLeft");
         slider[i].style.display = "none";
     }
     for (let i = 0; i < buttonsCircle.length; i++) {
-        // slider[i].classList.add("slideRight");
         buttonsCircle[i].className = buttonsCircle[i].className.replace("active", "");
         buttonContainer[i].className = buttonContainer[i].className.replace("active", "")
     }
     for (let i = sliderIndex-1; i < sliderIndex - 1 + amountOfVisibleElements; i++) {
-        // slider[i].classList.add("slideRight");
-        // slider[i].classList.add("slideLeft");
         slider[i].style.display = "block";
     }
     buttonsCircle[sliderIndex-1].className += " active";
@@ -165,8 +199,6 @@ addEventListenerToInput();
 updateBookVisibility(0, 3, true);
 
 function addEventListenerToInput(){
-    // animationId.forEach(id => cancelAnimationFrame(id));
-    // animationId = [];
     for (let i = 0; i < input.length; i++){
         input[i].addEventListener("click", (e) => {
             console.log("click", e);
@@ -255,24 +287,6 @@ function animateOpacityHide(element, duration) {
     requestAnimationFrame(step);
 }
 
-//fixed slider favorites
-
-// const menuFixed = document.getElementById("input");
-
-// window.onscroll = function() {
-//     const width = document.body.clientWidth;
-//     const scrolled = window.scrollX || document.documentElement.scrollTop;
-//     if (width < 769) {
-//         if(scrolled >= 200) {
-//             menuFixed.classList.add('fixed');
-//         } else {
-//             menuFixed.classList.remove('fixed');
-//         }
-//     }
-//   }
-
-
-
 //popup
 
 //click user icon
@@ -287,18 +301,69 @@ openProfileBtn.addEventListener("click", () => {
 
 function closeProfileLoginWindow() {
     profileLoginWindow.style.display = "none";
-}
+};
 
 //click register
 
 clickRegister.addEventListener("click", () => {
-    modalWrapper.classList.add("open");
+    modalWrapperRegister.classList.add("open");
     closeProfileLoginWindow();
-})
+});
+
 closeRegister.addEventListener("click", () => {
     closeModalRegistrationForm();
-})
+});
+
+clickRegisterInLibrary.addEventListener("click", () => {
+    document.documentElement.scrollTop = 0;
+    modalWrapperRegister.classList.add("open");
+});
 
 function closeModalRegistrationForm() {
-    modalWrapper.classList.remove("open");
-}
+    modalWrapperRegister.classList.remove("open");
+};
+
+window.addEventListener("keydown", (esc) => {
+    if (esc.key === "Escape") {
+        modalWrapperRegister.classList.remove("open");
+    }
+});
+
+clickLoginInRegister.addEventListener("click", () => {
+    closeModalRegistrationForm();
+    modalWrapperLogin.classList.add("open");
+})
+
+//click login
+
+clickLogin.addEventListener("click", () => {
+    modalWrapperLogin.classList.add("open");
+    closeProfileLoginWindow();
+});
+
+closeLogin.addEventListener("click", () => {
+    closeModalLoginForm();
+});
+
+clickLoginInLibrary.addEventListener("click", () => {
+    document.documentElement.scrollTop = 0;
+    modalWrapperLogin.classList.add("open");
+});
+
+function closeModalLoginForm() {
+    modalWrapperLogin.classList.remove("open");
+};
+
+window.addEventListener("keydown", (esc) => {
+    if (esc.key === "Escape") {
+        modalWrapperLogin.classList.remove("open");
+    }
+});
+
+clickRegisterInLogin.addEventListener("click", () => {
+    closeModalLoginForm();
+    modalWrapperRegister.classList.add("open");
+})
+
+
+

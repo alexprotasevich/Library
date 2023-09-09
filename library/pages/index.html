@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="modal-wrapper" id="modal-wrapper">
+        <div class="modal-wrapper" id="modal-wrapper-register">
             <div class="modal-register" id="modal-register">
                 <div class="modal-register-close" id="close-register">
                     <svg class="modal-register-close-svg" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
@@ -22,21 +22,73 @@
                 <form class="modal-register-form" name="register" method="post" action="test.php">
                     <div class="modal-register-form-wrapper">
                         <p class="modal-register-form-wrapper-text">First name</p>
-                        <input class="modal-register-form-wrapper-input" type="text" name="first name">
+                        <input class="modal-register-form-wrapper-input"
+                        type="text"
+                        name="first name"
+                        autocomplete="on"
+                        required>
                         <p class="modal-register-form-wrapper-text">Last name</p>
-                        <input class="modal-register-form-wrapper-input" type="text" name="last name">
+                        <input class="modal-register-form-wrapper-input"
+                        type="text"
+                        name="last name"
+                        autocomplete="on"
+                        required>
                         <p class="modal-register-form-wrapper-text">E-mail</p>
-                        <input class="modal-register-form-wrapper-input" type="email" name="email">
+                        <input class="modal-register-form-wrapper-input"
+                        type="email"
+                        name="email"
+                        autocomplete="on"
+                        required>
                         <p class="modal-register-form-wrapper-text">Password</p>
-                        <input class="modal-register-form-wrapper-input" type="password" name="password">
+                        <input class="modal-register-form-wrapper-input"
+                        type="password"
+                        name="password"
+                        autocomplete="current-password"
+                        required
+                        minlength="8">
                     </div>
                     <div class="modal-register-form-button">
-                        <button class="button-active">Sing Up</button>
+                        <button class="button-active">Sign Up</button>
                     </div>
                 </form>
                 <div class="modal-register-down">
                     <p class="modal-register-down-text">Already have an account?</p>
-                    <p class="modal-register-down-link">Login</p>
+                    <p class="modal-register-down-link" id="redirects-login">Login</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-wrapper" id="modal-wrapper-login">
+            <div class="modal-register" id="modal-login">
+                <div class="modal-register-close" id="close-login">
+                    <svg class="modal-register-close-svg" xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
+                        <path d="M2 16.8507L17 2.00003" stroke-width="3"/>
+                        <path d="M2 2.14926L17 17" stroke-width="3"/>
+                      </svg>
+                </div>
+                <h2 class="modal-register-text">Login</h2>
+                <form class="modal-register-form" name="login" method="post" action="test.php">
+                    <div class="modal-register-form-wrapper">
+                        <p class="modal-register-form-wrapper-text">E-mail or readers card</p>
+                        <input class="modal-register-form-wrapper-input"
+                        type="text"
+                        name="email"
+                        autocomplete="on"
+                        required>
+                        <p class="modal-register-form-wrapper-text">Password</p>
+                        <input class="modal-register-form-wrapper-input"
+                        type="password"
+                        name="password"
+                        autocomplete="current-password"
+                        required
+                        minlength="8">
+                    </div>
+                    <div class="modal-register-form-button">
+                        <button class="button-active">Log In</button>
+                    </div>
+                </form>
+                <div class="modal-register-down">
+                    <p class="modal-register-down-text">Don&apos;t have an account?</p>
+                    <p class="modal-register-down-link" id="redirects-register">Register</p>
                 </div>
             </div>
         </div>
@@ -44,7 +96,7 @@
             <div class="profile" id="profile-login">
                 <div class="profile-content">
                     <h3 class="profile-content-text">Profile</h3>
-                    <p class="profile-content-login">Log In</p>
+                    <p class="profile-content-login" id="open-login">Log In</p>
                     <p class="profile-content-register" id="open-register">Register</p>
                 </div>
             </div>
@@ -99,7 +151,6 @@
                             <path d="M15 7.5L9 12.5L15 17.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
                           </svg>
                     </button>
-                    <!-- <div class="wrapper-slider"> -->
                         <div class="main-about-gallery-img slider">
                             <img class="main-about-gallery-img-width" src="../assets/images/library_1.png" alt="library_1">
                         </div>
@@ -114,7 +165,6 @@
                         </div>
                         <div class="main-about-gallery-img slider">
                             <img class="main-about-gallery-img-width" src="../assets/images/library_5.png" alt="library_3">
-                        <!-- </div> -->
                     </div>
                     <button class="main-about-gallery-buttons" id="buttonRight">
                         <svg class="main-about-gallery-buttons-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
@@ -530,10 +580,16 @@
                                 <div class="main-library-card-form-wrapper">
                                     <p class="main-library-card-form-text">Brooklyn Public Library</p>
                                     <div class="main-library-card-form-input">
-                                        <input class="input" type="text" name="name" required placeholder="Reader's name">
+                                        <input class="input"
+                                        type="text"
+                                        name="name"
+                                        required placeholder="Reader's name">
                                     </div>
                                     <div class="main-library-card-form-input">
-                                        <input class="input" type="number" name="number" required placeholder="Card number">
+                                        <input class="input"
+                                        type="number"
+                                        name="number"
+                                        required placeholder="Card number">
                                     </div>
                                 </div>
                                 <div class="main-library-card-form-button">
@@ -546,8 +602,8 @@
                         <p class="main-library-reader-text">Get a reader card</p>
                         <p class="main-library-reader-paragraph">You will be able to see a reader card after logging into account or you can register a new account</p>
                         <div class="main-library-reader-button">
-                            <button class="button-active">Sign Up</button>
-                            <button class="button-active">Log in</button>
+                            <button class="button-active" id="sign-up-library">Sign Up</button>
+                            <button class="button-active" id="log-in-library">Log in</button>
                         </div>
                     </div>
                 </div>

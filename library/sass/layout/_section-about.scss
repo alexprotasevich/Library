@@ -39,75 +39,6 @@
             justify-content: center;
 
             &-img {
-                // animation-name: animation;
-                // animation-duration: 1.4s;
-                // transition: top 1s ease-out 0.5s;
-
-                // @keyframes animation {
-                //     from {
-                //         opacity: 0
-                //     }
-                //     to {
-                //         opacity: 1
-                //     }
-                //   }
-
-                // &.slideRight{
-                //     animation-name: slideRight;
-                //     animation-duration: 2s;
-                //     animation-timing-function: ease-in-out;
-                //     visibility: visible !important;
-                // }
-
-                // @keyframes slideRight {
-                //     0% {
-                //         transform: translateX(-150%);
-                //     }
-                //     50% {
-                //         transform: translateX(8%);
-                //     }
-                //     65% {
-                //         transform: translateX(-4%);
-                //     }
-                //     80% {
-                //         transform: translateX(4%);
-                //     }
-                //     95% {
-                //         transform: translateX(-2%);
-                //     }
-                //     100% {
-                //         transform: translateX(0%);
-                //     }
-                // }
-
-                // &.slideLeft{
-                //     animation-name: slideLeft;
-                //     animation-duration: 2s;
-                //     animation-timing-function: ease-in-out;
-                //     visibility: visible !important;
-                // }
-
-                // @keyframes slideLeft {
-                //     0% {
-                //         transform: translateX(150%);
-                //     }
-                //     50% {
-                //         transform: translateX(-8%);
-                //     }
-                //     65% {
-                //         transform: translateX(4%);
-                //     }
-                //     80% {
-                //         transform: translateX(-4%);
-                //     }
-                //     95% {
-                //         transform: translateX(2%);
-                //     }
-                //     100% {
-                //         transform: translateX(0%);
-                //     }
-                // }
-
                 &-width {
                     width: 100%;
                 }
@@ -238,9 +169,3 @@
         display: none;
     }
 }
-
-// .wrapper-slider {
-//     display: flex;
-//     gap: 25px;
-//     justify-content: center;
-// }

@@ -166,6 +166,11 @@
             font-size: 10px;
             letter-spacing: 1px;
             text-decoration-line: underline;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-gold;
+            }
         }
     }
 }
