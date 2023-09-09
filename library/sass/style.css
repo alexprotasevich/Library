@@ -10,19 +10,19 @@
   font-family: "Forum";
   src: url("../assets/fonts/Forum-Regular.ttf");
 }
-.font-inter-bold, .profile-content-text, .main-contacts-info-wrapper-mail, .main-contacts-info-text, .main-favorites-wrapper-pick-author, .main-favorites-wrapper-pick-name, .main-favorites-paragraph, .button-active:disabled, .button-active {
+.font-inter-bold, .modal-register-down-link, .profile-content-text, .main-contacts-info-wrapper-mail, .main-contacts-info-text, .main-favorites-wrapper-pick-author, .main-favorites-wrapper-pick-name, .main-favorites-paragraph, .button-active:disabled, .button-active {
   font-family: "Inter-Bold";
   font-style: normal;
   font-weight: 700;
 }
 
-.font-inter-regular, .profile-content-register, .profile-content-login, .footer-container-text, .footer-worktime-text, .footer-contacts-container-link, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
+.font-inter-regular, .modal-register-down-text, .modal-register-form-wrapper-text, .profile-content-register, .profile-content-login, .footer-container-text, .footer-worktime-text, .footer-contacts-container-link, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
   font-family: "Inter-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.font-forum, .main-library-reader-text, .main-library-card-form-text, .main-library-text, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .welcome-section-text, .input, h1 {
+.font-forum, .modal-register-text, .main-library-reader-text, .main-library-card-form-text, .main-library-text, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .welcome-section-text, .input, h1 {
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
@@ -1232,7 +1232,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 .modal-register {
   position: relative;
-  max-width: 250px;
+  width: 250px;
   padding: 20px 25px;
   z-index: 1;
   background-color: #FFFFFF;
@@ -1241,13 +1241,15 @@ input[type=number]::-webkit-inner-spin-button {
   transition: transform 0.8s;
 }
 .modal-register-close {
-  margin: 10px;
+  margin: 15px;
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
 }
 .modal-register-close-svg {
+  width: 15px;
+  height: 15px;
   cursor: pointer;
 }
 .modal-register-close-svg path {
@@ -1256,6 +1258,46 @@ input[type=number]::-webkit-inner-spin-button {
 .modal-register-close-svg:hover path {
   stroke: #BB945F;
   transition: 0.5s;
+}
+.modal-register-text {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.modal-register-form-wrapper {
+  padding: 20px 0 10px 0;
+}
+.modal-register-form-wrapper-text {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  padding-bottom: 10px;
+}
+.modal-register-form-wrapper-input {
+  border: 1px solid #BB945F;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 20px;
+}
+.modal-register-down {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.modal-register-down-text {
+  font-size: 10px;
+  line-height: normal;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+.modal-register-down-link {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-decoration-line: underline;
 }
 
 .modal-wrapper.open {
