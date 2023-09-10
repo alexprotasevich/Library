@@ -72,15 +72,6 @@
 //media
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
-    .image2 {
-        display: none;
-    }
-
-    .image3 {
-        display: none;
-    }
-
-
     .main {
         &-about {
             &-gallery {
@@ -96,6 +87,14 @@
                     width: 24px;
                     height: 24px;
                     background: none;
+
+                    &:disabled {
+                        pointer-events: none;
+
+                        .main-about-gallery-buttons-svg path{
+                            stroke: rgb(192,192,192);
+                        }
+                    }
 
                     &-svg {
                         cursor: pointer;
