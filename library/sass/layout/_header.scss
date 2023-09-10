@@ -3,6 +3,7 @@
     justify-content: space-between;
     background: $color-dark;
     flex-wrap: wrap;
+    position: relative;
 
     &-navigation {
         display: flex;
@@ -69,6 +70,7 @@
 .hamburger-lines {
     display: none;
 }
+
 
 //media
 
