@@ -56,6 +56,23 @@
                     transition: 0.5s;
                 }
             }
+
+            &-span {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background-color: $color-white;
+                cursor: pointer;
+                fill: $color-white;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    color: $color-gold;
+                    cursor: pointer;
+                    transition: 0.5s;
+                }
+            }
         }
     }
 
