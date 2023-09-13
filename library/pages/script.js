@@ -29,9 +29,17 @@ const clickRegisterInLogin = document.getElementById("redirects-register");
 const clickBuyOnBook = document.querySelectorAll(".button-buy");
 
 const clickSignUpInRegister = document.getElementById("submit-register");
+const clickLogInInLogin = document.getElementById("submit-login");
+
+const styleIconSvgInHeder = document.getElementById("icon-svg");
+const styleIconSpanInHeder = document.getElementById("icon-span");
 
 let user;
 
+const clickMyProfile = document.getElementById("my-profile");
+const clickLogOut = document.getElementById("log-out");
+
+init()
 
 
 
@@ -210,7 +218,6 @@ updateBookVisibility(0, 3, true);
 function addEventListenerToInput(){
     for (let i = 0; i < input.length; i++){
         input[i].addEventListener("click", (e) => {
-            console.log("click", e);
             let from = 0;
             let to = 3;
 
@@ -385,7 +392,7 @@ clickBuyOnBook.forEach((elem) => {
     })
 })
 
-//click sign up in register
+//click sign up in window register
 
 clickSignUpInRegister.addEventListener("click", () => {
     const registerForm = document.forms.register;
@@ -402,7 +409,8 @@ clickSignUpInRegister.addEventListener("click", () => {
         };
         dataLS.push(user);
         localStorage.setItem('registration', JSON.stringify(dataLS));
-        console.log("from LS", JSON.parse(fromStore))
+        localStorage.setItem("user", JSON.stringify(user));
+        login();
     }
 })
 
@@ -416,3 +424,36 @@ function randomIdCardNumber(size) {
         return result.join('');
 }
 
+function init() {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+        user = JSON.parse(storedUser);
+        login()
+    }
+}
+//login
+
+function login() {
+    // const registerForm = document.forms.register;
+    // registerForm.reset();
+    closeModalRegistrationForm();
+    clickLogin.classList.add("user");
+    clickRegister.classList.add("user");
+    clickMyProfile.classList.add("user");
+    clickLogOut.classList.add("user");
+
+    const userFirstLetters = `${user.firstName[0].toUpperCase()}${user.lastName[0].toUpperCase()}`;
+    styleIconSpanInHeder.innerText = userFirstLetters;
+    styleIconSvgInHeder.classList.add("d-none");
+    styleIconSpanInHeder.classList.add("d-flex");
+    styleIconSpanInHeder.classList.remove("d-none");
+}
+
+//click Log In in window Login
+
+clickLogInInLogin.addEventListener("click", () => {
+    const loginForm = document.forms.login;
+    if(loginForm.checkValidity()) {
+
+    }
+})
