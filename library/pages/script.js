@@ -26,6 +26,8 @@ const clickLoginInLibrary = document.getElementById("log-in-library");
 const clickLoginInRegister = document.getElementById("redirects-login");
 const clickRegisterInLogin = document.getElementById("redirects-register");
 
+const clickBuyOnBook = document.querySelectorAll(".button-buy");
+
 
 
 
@@ -51,6 +53,8 @@ document.addEventListener("click", (event) => {
     const isClickLoginInRegister = event.target.closest("#redirects-login");
     const isClickRegisterInLogin = event.target.closest("#redirects-register");
 
+    const isClickBuyOnBook = event.target.closest(".button-buy");
+
     if (!isClosestBurger
         && !isClosestMenu
         && navigation.classList.contains("burger-navigation")){
@@ -75,7 +79,8 @@ document.addEventListener("click", (event) => {
         && modalWrapperLogin.classList.contains("open")
         && !isLoginButton
         && !isLoginButtonLibrary
-        && !isClickLoginInRegister) {
+        && !isClickLoginInRegister
+        && !isClickBuyOnBook) {
             closeModalLoginForm()
     }
 })
@@ -365,5 +370,15 @@ clickRegisterInLogin.addEventListener("click", () => {
     modalWrapperRegister.classList.add("open");
 })
 
+
+//click buy on book
+
+
+clickBuyOnBook.forEach((elem) => {
+    elem.addEventListener("click", () => {
+        document.documentElement.scrollTop = 0;
+        modalWrapperLogin.classList.add("open");
+    })
+})
 
 
