@@ -28,6 +28,10 @@ const clickRegisterInLogin = document.getElementById("redirects-register");
 
 const clickBuyOnBook = document.querySelectorAll(".button-buy");
 
+const clickSignUpInRegister = document.getElementById("submit-register");
+
+let user;
+
 
 
 
@@ -381,4 +385,34 @@ clickBuyOnBook.forEach((elem) => {
     })
 })
 
+//click sign up in register
+
+clickSignUpInRegister.addEventListener("click", () => {
+    const registerForm = document.forms.register;
+
+    if (registerForm.checkValidity()) {
+        const fromStore = localStorage.getItem('registration');
+        const dataLS = JSON.parse(fromStore) || [];
+        user = {
+            firstName: registerForm.firstName.value,
+            lastName: registerForm.lastName.value,
+            email: registerForm.email.value,
+            password: registerForm.email.value,
+            idCard: randomIdCardNumber(9),
+        };
+        dataLS.push(user);
+        localStorage.setItem('registration', JSON.stringify(dataLS));
+        console.log("from LS", JSON.parse(fromStore))
+    }
+})
+
+function randomIdCardNumber(size) {
+        let result = [];
+        let hexRef = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+        for (let n = 0; n < size; n ++) {
+          result.push(hexRef[Math.floor(Math.random() * 16)]);
+        }
+        return result.join('');
+}
 
