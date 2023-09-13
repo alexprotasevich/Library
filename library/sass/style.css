@@ -61,6 +61,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.frame {
+  display: none;
+}
+
 .main-about-buttons-container {
   cursor: pointer;
   height: 26px;
@@ -1317,4 +1321,17 @@ input[type=number]::-webkit-inner-spin-button {
   .profile {
     margin: 59px 105px 0 0;
   }
+}
+.without-registration {
+  display: block;
+}
+.without-registration.user {
+  display: none;
+}
+
+.registrated {
+  display: none;
+}
+.registrated.user {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
