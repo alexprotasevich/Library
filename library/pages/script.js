@@ -36,10 +36,14 @@ const styleIconSpanInHeder = document.getElementById("icon-span");
 
 let user;
 
-const clickMyProfile = document.getElementById("my-profile");
 const clickLogOut = document.getElementById("log-out");
 
 const profileRenameToIdCard = document.getElementById("profile-idCard");
+
+const clickMyProfile = document.getElementById("my-profile");
+const modalWrapperProfile = document.getElementById("modal-wrapper-profile");
+const closeProfile = document.getElementById("close-profile");
+
 
 init()
 
@@ -507,3 +511,15 @@ function logOut() {
 
 //open window My Profile
 
+clickMyProfile.addEventListener("click", () => {
+    modalWrapperProfile.classList.add("open");
+    closeProfileLoginWindow();
+});
+
+closeProfile.addEventListener("click", () => {
+    closeModalProfileForm();
+});
+
+function closeModalProfileForm() {
+    modalWrapperProfile.classList.remove("open");
+};
