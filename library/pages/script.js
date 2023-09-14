@@ -39,6 +39,7 @@ let user;
 const clickMyProfile = document.getElementById("my-profile");
 const clickLogOut = document.getElementById("log-out");
 
+
 init()
 
 
@@ -404,7 +405,7 @@ clickSignUpInRegister.addEventListener("click", () => {
             firstName: registerForm.firstName.value,
             lastName: registerForm.lastName.value,
             email: registerForm.email.value,
-            password: registerForm.email.value,
+            password: registerForm.password.value,
             idCard: randomIdCardNumber(9),
         };
         dataLS.push(user);
@@ -457,3 +458,23 @@ clickLogInInLogin.addEventListener("click", () => {
 
     }
 })
+
+//click Log Out in window Profile
+
+clickLogOut.addEventListener("click", () => {
+    logOut();
+    closeProfileLoginWindow();
+})
+
+function logOut() {
+    localStorage.removeItem("user");
+    styleIconSvgInHeder.classList.remove("d-none");
+    styleIconSpanInHeder.classList.remove("d-flex");
+    styleIconSpanInHeder.classList.add("d-none");
+    clickLogin.classList.remove("user");
+    clickRegister.classList.remove("user");
+    clickMyProfile.classList.remove("user");
+    clickLogOut.classList.remove("user");
+}
+
+
