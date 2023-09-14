@@ -16,13 +16,13 @@
   font-weight: 700;
 }
 
-.font-inter-regular, .modal-register-down-text, .modal-register-form-wrapper-text, .profile-content-register, .profile-content-login, .footer-container-text, .footer-worktime-text, .footer-contacts-container-link, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
+.font-inter-regular, .modal-profile-info-card-number, .modal-profile-info-card-text, .modal-profile-info-list-rented, .modal-profile-info-h4, .modal-profile-info-books-number, .modal-profile-info-books-text, .modal-profile-info-bonuses-number, .modal-profile-info-bonuses-text, .modal-profile-info-visits-number, .modal-profile-info-visits-text, .modal-profile-icon-name, .modal-profile-icon-wrapper-letter, .modal-register-down-text, .modal-register-form-wrapper-text, .profile-content-register, .profile-content-login, .footer-container-text, .footer-worktime-text, .footer-contacts-container-link, .main-library-reader-paragraph, .main-library-card-text, .main-contacts-info-wrapper-tel, .main-contacts-info-wrapper-text, .main-coffeeshop-container-text, .main-coffeeshop-paragraph, .main-favorites-wrapper-pick-text, .main-favorites-input-label, .main-about-paragraph, .header-navigation-nav-list-item-link {
   font-family: "Inter-Regular";
   font-style: normal;
   font-weight: 400;
 }
 
-.font-forum, .modal-register-text, .main-library-reader-text, .main-library-card-form-text, .main-library-text, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .welcome-section-text, .input, h1 {
+.font-forum, .modal-profile-info-text, .modal-register-text, .main-library-reader-text, .main-library-card-form-text, .main-library-text, .main-contacts-text, .main-coffeeshop-container-price, .main-coffeeshop-container-paragraph, .main-coffeeshop-text, .main-favorites-wrapper-pick-staff, .main-favorites-text, .main-about-text, .welcome-section-text, .input, h1 {
   font-family: "Forum";
   font-style: normal;
   font-weight: 400;
@@ -1331,6 +1331,162 @@ input[type=number]::-webkit-inner-spin-button {
   color: #BB945F;
 }
 
+.modal-profile {
+  position: relative;
+  width: 600px;
+  z-index: 1;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px 23px 4px rgba(173, 177, 180, 0.44);
+  transform: scale(0);
+  transition: transform 0.8s;
+  display: flex;
+}
+.modal-profile-close {
+  margin: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.modal-profile-close-svg {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.modal-profile-close-svg path {
+  stroke: #0C0C0E;
+}
+.modal-profile-close-svg:hover path {
+  stroke: #BB945F;
+  transition: 0.5s;
+}
+.modal-profile-icon {
+  background-color: #0C0C0E;
+  width: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-profile-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background-color: #FFFFFF;
+}
+.modal-profile-icon-wrapper-letter {
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+.modal-profile-icon-name {
+  line-height: 20px;
+  font-size: 20px;
+  background-color: #FFFFFF;
+}
+.modal-profile-info {
+  padding: 40px 0 40px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.modal-profile-info-text {
+  font-size: 40px;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding-bottom: 40px;
+}
+.modal-profile-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.modal-profile-info-visits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.modal-profile-info-visits-text {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+.modal-profile-info-visits-number {
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+.modal-profile-info-bonuses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.modal-profile-info-bonuses-text {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+.modal-profile-info-bonuses-number {
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+.modal-profile-info-books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.modal-profile-info-books-text {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+.modal-profile-info-books-number {
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+.modal-profile-info-h4 {
+  font-size: 25px;
+  line-height: 20px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.modal-profile-info-list {
+  height: 50px;
+}
+.modal-profile-info-list-rented {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 2px;
+}
+.modal-profile-info-card {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.modal-profile-info-card-text {
+  font-size: 20px;
+  line-height: 20px;
+}
+.modal-profile-info-card-number {
+  color: #BB945F;
+  font-size: 20px;
+  line-height: 20px;
+}
+.modal-profile-info-card-svg {
+  cursor: pointer;
+}
+
 .modal-wrapper.open {
   visibility: visible;
   transition: opacity 0.4s, visibility 0.4s;
@@ -1338,6 +1494,10 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .modal-wrapper.open .modal-register {
+  transform: scale(1);
+}
+
+.modal-wrapper.open .modal-profile {
   transform: scale(1);
 }
 

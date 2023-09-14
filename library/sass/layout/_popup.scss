@@ -177,14 +177,202 @@
 }
 
 .modal-profile {
-    // position: relative;
-    // width: 250px;
+    position: relative;
+    width: 600px;
     // padding: 20px 25px;
-    // z-index: 1;
-    // background-color: $color-white;
-    // box-shadow: 4px 4px 23px 4px rgba(173, 177, 180, 0.44);
-    // transform: scale(0);
-    // transition: transform 0.8s;
+    z-index: 1;
+    background-color: $color-white;
+    box-shadow: 4px 4px 23px 4px rgba(173, 177, 180, 0.44);
+    transform: scale(0);
+    transition: transform 0.8s;
+    display: flex;
+
+    &-close {
+        margin: 25px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+
+        &-svg {
+            width: 15px;
+            height: 15px;
+
+            path {
+                stroke: #0C0C0E;
+            }
+            cursor: pointer;
+
+            &:hover {
+                path {
+                    stroke: $color-gold;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+
+    &-icon {
+        background-color: $color-dark;
+        width: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: $color-white;
+
+            &-letter {
+                @extend .font-inter-regular;
+                font-size: 20px;
+                line-height: 20px;
+                text-transform: capitalize;
+            }
+        }
+
+        &-name {
+            @extend .font-inter-regular;
+            line-height: 20px;
+            font-size: 20px;
+            background-color: $color-white;
+        }
+    }
+
+    &-info {
+        padding: 40px 0 40px 20px;
+        display: flex;
+        flex-direction: column;
+
+        &-text {
+            @extend .font-forum;
+            font-size: 40px;
+            letter-spacing: 0.8px;
+            line-height: 20px;
+            text-transform: uppercase;
+            padding-bottom: 40px;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        &-visits {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            &-text {
+                @extend .font-inter-regular;
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 0.4px;
+                text-transform: capitalize;
+            }
+
+            &-number {
+                @extend .font-inter-regular;
+                font-size: 10px;
+                line-height: 20px;
+                letter-spacing: 0.2px;
+                text-transform: capitalize;
+            }
+        }
+
+        &-bonuses {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            &-text {
+                @extend .font-inter-regular;
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 0.4px;
+                text-transform: capitalize;
+            }
+
+            &-number {
+                @extend .font-inter-regular;
+                font-size: 10px;
+                line-height: 20px;
+                letter-spacing: 0.2px;
+                text-transform: capitalize;
+            }
+        }
+
+        &-books {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            &-text {
+                @extend .font-inter-regular;
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 0.4px;
+                text-transform: capitalize;
+            }
+
+            &-number {
+                @extend .font-inter-regular;
+                font-size: 10px;
+                line-height: 20px;
+                letter-spacing: 0.2px;
+                text-transform: capitalize;
+            }
+        }
+
+        &-h4 {
+            @extend .font-inter-regular;
+            font-size: 25px;
+            line-height: 20px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+
+        &-list {
+            height: 50px;
+
+            &-rented {
+                @extend .font-inter-regular;
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 2px;
+            }
+        }
+
+        &-card {
+            padding-top: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+
+            &-text {
+                @extend .font-inter-regular;
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            &-number {
+                @extend .font-inter-regular;
+                color: $color-gold;
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            &-svg {
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .modal-wrapper.open {
@@ -197,9 +385,9 @@
     transform: scale(1);
 }
 
-// .modal-wrapper.open .modal-profile {
-//     transform: scale(1);
-// }
+.modal-wrapper.open .modal-profile {
+    transform: scale(1);
+}
 
 @media screen and (min-width: 400px) and (max-width: 1024px) {
     .profile {
