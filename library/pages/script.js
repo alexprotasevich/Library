@@ -468,7 +468,7 @@ function login() {
     profileRenameToIdCard.innerText = user.idCard;
     profileRenameToIdCard.style.fontSize = "10px";
 
-    styleIconSpanInHeder.setAttribute("title", userFirstLetters);
+    styleIconSpanInHeder.setAttribute("title", `${user.firstName} ${user.lastName}`);
 }
 
 //click Log In in window Login
