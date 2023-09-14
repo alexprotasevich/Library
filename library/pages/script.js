@@ -454,6 +454,8 @@ function login() {
 
     profileRenameToIdCard.innerText = user.idCard;
     profileRenameToIdCard.style.fontSize = "10px";
+
+    styleIconSpanInHeder.setAttribute("title", userFirstLetters);
 }
 
 //click Log In in window Login
@@ -474,6 +476,7 @@ clickLogInInLogin.addEventListener("click", () => {
         }
     }
     if(user) {
+        localStorage.setItem("user", JSON.stringify(user));
         closeModalLoginForm();
         login();
     } else {
@@ -499,6 +502,8 @@ function logOut() {
     clickLogOut.classList.remove("user");
     profileRenameToIdCard.innerText = "Profile";
     profileRenameToIdCard.style.fontSize = "15px";
+    styleIconSpanInHeder.removeAttribute("title");
+    // styleIconSpanInHeder.document.title = "";
 }
 
 
