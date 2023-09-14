@@ -79,7 +79,6 @@
     justify-content: center;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.4s, visibility 0.4s;
 }
 
 .modal-register {
@@ -177,14 +176,30 @@
     }
 }
 
+.modal-profile {
+    // position: relative;
+    // width: 250px;
+    // padding: 20px 25px;
+    // z-index: 1;
+    // background-color: $color-white;
+    // box-shadow: 4px 4px 23px 4px rgba(173, 177, 180, 0.44);
+    // transform: scale(0);
+    // transition: transform 0.8s;
+}
+
 .modal-wrapper.open {
     visibility: visible;
+    transition: opacity 0.4s, visibility 0.4s;
     opacity: 1;
 }
 
 .modal-wrapper.open .modal-register {
     transform: scale(1);
 }
+
+// .modal-wrapper.open .modal-profile {
+//     transform: scale(1);
+// }
 
 @media screen and (min-width: 400px) and (max-width: 1024px) {
     .profile {

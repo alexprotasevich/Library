@@ -432,14 +432,14 @@ function init() {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
         user = JSON.parse(storedUser);
-        login()
+        login();
     }
 }
+
+
 //login
 
 function login() {
-    // const registerForm = document.forms.register;
-    // registerForm.reset();
     closeModalRegistrationForm();
     clickLogin.classList.add("user");
     clickRegister.classList.add("user");
@@ -503,7 +503,7 @@ function logOut() {
     profileRenameToIdCard.innerText = "Profile";
     profileRenameToIdCard.style.fontSize = "15px";
     styleIconSpanInHeder.removeAttribute("title");
-    // styleIconSpanInHeder.document.title = "";
 }
 
+//open window My Profile
 
