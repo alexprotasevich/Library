@@ -39,6 +39,7 @@ let user;
 const clickMyProfile = document.getElementById("my-profile");
 const clickLogOut = document.getElementById("log-out");
 
+const profileRenameToIdCard = document.getElementById("profile-idCard");
 
 init()
 
@@ -388,8 +389,10 @@ clickRegisterInLogin.addEventListener("click", () => {
 
 clickBuyOnBook.forEach((elem) => {
     elem.addEventListener("click", () => {
-        document.documentElement.scrollTop = 0;
-        modalWrapperLogin.classList.add("open");
+        if(!user) {
+            document.documentElement.scrollTop = 0;
+            modalWrapperLogin.classList.add("open");
+        }
     })
 })
 
@@ -448,6 +451,9 @@ function login() {
     styleIconSvgInHeder.classList.add("d-none");
     styleIconSpanInHeder.classList.add("d-flex");
     styleIconSpanInHeder.classList.remove("d-none");
+
+    profileRenameToIdCard.innerText = user.idCard;
+    profileRenameToIdCard.style.fontSize = "10px";
 }
 
 //click Log In in window Login
@@ -455,7 +461,23 @@ function login() {
 clickLogInInLogin.addEventListener("click", () => {
     const loginForm = document.forms.login;
     if(loginForm.checkValidity()) {
-
+        const emailOrCard = loginForm.emailOrCard.value;
+        const password = loginForm.password.value;
+        const fromStore = localStorage.getItem('registration');
+        const dataLS = JSON.parse(fromStore) || [];
+        if(dataLS.length) {
+            const resultUser = dataLS.find(item => {
+                return (emailOrCard === item.email || emailOrCard === item.idCard) &&
+                password === item.password;
+            })
+            user = resultUser;
+        }
+    }
+    if(user) {
+        closeModalLoginForm();
+        login();
+    } else {
+        alert("Вы не зарегистрированы! Пройдите регистрацию.");
     }
 })
 
@@ -475,6 +497,8 @@ function logOut() {
     clickRegister.classList.remove("user");
     clickMyProfile.classList.remove("user");
     clickLogOut.classList.remove("user");
+    profileRenameToIdCard.innerText = "Profile";
+    profileRenameToIdCard.style.fontSize = "15px";
 }
 
 
