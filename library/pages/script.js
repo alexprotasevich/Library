@@ -73,6 +73,9 @@ document.addEventListener("click", (event) => {
 
     const isClickBuyOnBook = event.target.closest(".button-buy");
 
+    const isClosestModalProfileForm = event.target.closest("#modal-profile");
+    const isClickMyProfile = event.target.closest("#my-profile");
+
     if (!isClosestBurger
         && !isClosestMenu
         && navigation.classList.contains("burger-navigation")){
@@ -100,6 +103,12 @@ document.addEventListener("click", (event) => {
         && !isClickLoginInRegister
         && !isClickBuyOnBook) {
             closeModalLoginForm()
+    }
+
+    if(!isClosestModalProfileForm
+        && modalWrapperProfile.classList.contains("open")
+        && !isClickMyProfile) {
+        closeModalProfileForm();
     }
 })
 
@@ -523,3 +532,9 @@ closeProfile.addEventListener("click", () => {
 function closeModalProfileForm() {
     modalWrapperProfile.classList.remove("open");
 };
+
+window.addEventListener("keydown", (esc) => {
+    if (esc.key === "Escape") {
+        modalWrapperProfile.classList.remove("open");
+    }
+});
