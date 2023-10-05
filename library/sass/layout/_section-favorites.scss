@@ -1,0 +1,254 @@
+.main {
+    &-favorites {
+        &-text {
+            @extend .font-forum;
+            color: $color-dark;
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            text-align: center;
+            padding-top: 20px;
+
+            &::after {
+                content: "";
+                background-color: $color-dark;
+                height: 1px;
+                width: 50px;
+                display: block;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 20px);
+            }
+        }
+
+        &-paragraph {
+            @extend .font-inter-bold;
+            color: $color-black;
+            font-size: 20px;
+            line-height: normal;
+            padding: 61px 0 36px 0;
+        }
+
+        &-input {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 81px;
+
+            &-label {
+                @extend .font-inter-regular;
+                font-size: 20px;
+                line-height: normal;
+                cursor: pointer;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                &:has(.main-favorites-input-label-radio:checked) {
+                    font-weight: 700;
+                }
+
+                &-radio {
+                    accent-color: $color-black;
+                    position: relative;
+                    height: 17px;
+                    width: 17px;
+                    padding: 5px;
+                    cursor: pointer;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: $color-white;
+                        border: 2px solid $color-black;
+                    }
+
+                    &:checked::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: $color-black;
+                        transform: translate(-50%, -50%);
+                        visibility: visible;
+                    }
+
+                }
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            &-pick {
+                display: none;
+                width: 590px;
+                position: relative;
+                margin-top: 34px;
+                margin-bottom: 5px;
+                min-height: 555px;
+
+                &-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                &-content {
+                    background: $color-white;
+                    border: 1px solid $color-black;
+                    width: 550px;
+                    padding: 0 20px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                &-staff {
+                    @extend .font-forum;
+                    color: $color-black;
+                    font-size: 20px;
+                    line-height: 40px;
+                    letter-spacing: 2px;
+                    text-transform: capitalize;
+                    padding: 14px 0 0 0;
+
+                    &::after {
+                        content: "";
+                        background-color: $color-gold;
+                        height: 1px;
+                        width: 60px;
+                        display: block;
+                        position: relative;
+                    }
+                }
+
+                &-name {
+                    @extend .font-inter-bold;
+                    color: $color-black;
+                    font-size: 15px;
+                    line-height: 40px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    padding: 19px 0 0 0;
+                }
+
+                &-author {
+                    @extend .font-inter-bold;
+                    color: $color-black;
+                    font-size: 15px;
+                    line-height: 40px;
+                    letter-spacing: 2px;
+                    text-transform: capitalize;
+                    padding: 0 0 0 0;
+                }
+
+                &-text {
+                    @extend .font-inter-regular;
+                    position: relative;
+                    color: $color-black;
+                    font-size: 15px;
+                    line-height: 40px;
+                    letter-spacing: 2px;
+                    text-transform: capitalize;
+                    padding-top: 20px;
+                    padding-right: 150px;
+                }
+
+                &-button {
+                    padding: 15px 0 14px 0;
+                }
+
+                &-img {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .main {
+        &-favorites {
+            &-paragraph {
+                padding-top: 0;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+            }
+            &-input {
+                position: sticky;
+                top: 30px;
+                z-index: 11;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .main {
+        &-favorites {
+            &-input {
+                gap: 0;
+                justify-content: space-between;
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+    .main {
+        &-favorites {
+            &-wrapper {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+    .main {
+        &-favorites {
+            &-wrapper {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 639px) {
+    .main {
+        &-favorites {
+            &-wrapper {
+                &-pick {
+                    &-content {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}

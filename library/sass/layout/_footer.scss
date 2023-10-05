@@ -1,0 +1,119 @@
+.footer {
+    background-color: $color-dark;
+    padding: 20px;
+
+    &-wrapper {
+        border-bottom: 1px solid $color-white;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 20px;
+    }
+
+    &-contacts {
+        &-container {
+            width: 229px;
+            margin-top: 2px;
+
+            &-link {
+                @extend .font-inter-regular;
+                color: $color-white;
+                font-size: 15px;
+                line-height: 20px;
+
+                &:hover {
+                    color: $color-gold;
+                    cursor: pointer;
+                    transition: 0.5s;
+                }
+            }
+        }
+
+        &-social {
+            display: flex;
+            gap: 15px;
+            padding-top: 18px;
+
+            &-li {
+                list-style-type: none;
+            }
+
+            &-svg {
+                cursor: pointer;
+                fill: #F5EFDb;
+
+                &:hover {
+                    fill: $color-gold;
+                    cursor: pointer;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+
+    &-worktime {
+        &-text {
+            @extend .font-inter-regular;
+            color: $color-white;
+            text-align: right;
+            font-size: 15px;
+            line-height: 20px;
+            padding-bottom: 10px;
+        }
+    }
+
+    &-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 46px 0 24px 2px;
+
+        &-text {
+            @extend .font-inter-regular;
+            color: $color-white;
+            font-size: 20px;
+            line-height: 20px;
+            letter-spacing: 2px;
+
+            &:not(.left):hover {
+                color: $color-gold;
+                cursor: pointer;
+                transition: 0.5s;
+            }
+        }
+
+        &-left {
+            text-align: left;
+        }
+
+        &-center {
+            text-align: center;
+        }
+
+        &-right {
+            text-align: right;
+        }
+    }
+}
+
+//media
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .footer {
+        padding: 19px;
+
+        &-container {
+            grid-template-columns: 1fr 2fr 1fr;
+
+            &-text {
+                &.rolling {
+                    margin-left: 3px;
+                }
+            }
+
+            &-center {
+                text-align: left;
+            }
+        }
+    }
+}

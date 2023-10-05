@@ -1,0 +1,171 @@
+.main {
+    background-color: $color-white;
+
+    &-about {
+        &-text {
+            @extend .font-forum;
+            color: $color-dark;
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            text-align: center;
+            padding-top: 20px;
+
+            &::after {
+                content: "";
+                background-color: $color-dark;
+                height: 1px;
+                width: 50px;
+                display: block;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%, 20px);
+            }
+        }
+
+        &-paragraph {
+            @extend .font-inter-regular;
+            color: $color-black;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: center;
+            padding: 60px 0 20px;
+        }
+
+        &-gallery {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+
+            &-img {
+                &-width {
+                    width: 100%;
+                }
+            }
+
+            &-buttons {
+                display: none;
+            }
+        }
+
+        &-buttons {
+            display: flex;
+            justify-content: center;
+            padding: 30px 0 35px;
+
+            &-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                    &.container4,
+                    &.container5 {
+                        display: none;
+                    }
+            }
+        }
+    }
+}
+
+
+//media
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+    .main {
+        &-about {
+            &-gallery {
+                gap: 58px;
+                align-items: center;
+
+                &-buttons {
+                    margin-top: 37px;
+                    border: none;
+                    display: flex;
+                    align-content: center;
+                    flex-wrap: wrap;
+                    width: 24px;
+                    height: 24px;
+                    background: none;
+
+                    &:disabled {
+                        pointer-events: none;
+
+                        .main-about-gallery-buttons-svg path{
+                            stroke: rgb(192,192,192);
+                        }
+                    }
+
+                    &-svg {
+                        cursor: pointer;
+
+                        &:hover {
+                            fill: $color-black;
+                            cursor: pointer;
+                            transition: 0.5s;
+                        }
+                    }
+                }
+            }
+
+            &-buttons {
+                padding: 15px 0 35px;
+
+                &-container {
+                    &.container4,
+                    &.container5 {
+                        display: flex;
+                    }
+
+                    &-button4 {
+                        display: inline-block;
+                    }
+
+                    &-button5 {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+    .main {
+        &-about {
+            &-gallery {
+                gap: 58px;
+                align-items: center;
+
+                &-buttons {
+                    margin-top: 37px;
+                    border: none;
+                    display: flex;
+                    align-content: center;
+                    flex-wrap: wrap;
+                    width: 24px;
+                    height: 24px;
+                    background: none;
+
+                    &-svg {
+                        cursor: pointer;
+
+                        &:hover {
+                            fill: $color-black;
+                            cursor: pointer;
+                            transition: 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .image2 {
+        display: none;
+    }
+
+    .image3 {
+        display: none;
+    }
+}

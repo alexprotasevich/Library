@@ -1,0 +1,19 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input {
+    width: 100%;
+    @extend .font-forum;
+    color: $color-grey;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+    outline: none;
+    border: 8px solid $color-white;
+    border-radius: 10px;
+    background: $color-white;
+    text-indent: 11px;
+}
