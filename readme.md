@@ -1,1 +1,1 @@
-https://rolling-scopes-school.github.io/alexprotasevich-JSFEPRESCHOOL2023Q2/library/pages/index.html
+https://alexprotasevich.github.io/library/library/pages/
